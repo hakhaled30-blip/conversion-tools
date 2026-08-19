@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Weight Converter - Free Online Tool</title>
+
+  <meta name="description" content="Free online weight converter. Convert kilograms, grams, milligrams, pounds, ounces, stones, tons and more.">
+
+  <meta name="robots" content="index, follow">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f5f7fb;
+      color: #1f2937;
+      min-height: 100vh;
+    }
+
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid #e5e7eb;
+      padding: 18px 20px;
+    }
+
+    .header-content {
+      max-width: 1050px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      color: #2563eb;
+      text-decoration: none;
+      font-size: 23px;
+      font-weight: 700;
+    }
+
+    .home-link {
+      color: #374151;
+      text-decoration: none;
+      font-size: 15px;
+    }
+
+    .home-link:hover {
+      color: #2563eb;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 50px auto;
+      padding: 0 20px;
+    }
+
+    .intro {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .intro h1 {
+      font-size: 40px;
+      color: #111827;
+      margin-bottom: 12px;
+    }
+
+    .intro p {
+      color: #6b7280;
+      font-size: 17px;
+    }
+
+    .converter {
+      background: #ffffff;
+      padding: 32px;
+      border-radius: 18px;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.06);
+    }
+
+    .field {
+      margin-bottom: 20px;
+    }
+
+    .field label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 700;
+      color: #374151;
+    }
+
+    .field input,
+    .field select {
+      width: 100%;
+      padding: 14px;
+      border: 1px solid #d1d5db;
+      border-radius: 10px;
+      font-size: 16px;
+      background: #ffffff;
+    }
+
+    .field input:focus,
+    .field select:focus {
+      outline: none;
+      border-color: #2563eb;
+    }
+
+    .swap-container {
+      display: flex;
+      justify-content: center;
+      margin: -4px 0 18px;
+    }
+
+    .swap-button {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      border: 1px solid #d1d5db;
+      background: #ffffff;
+      color: #2563eb;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    .swap-button:hover {
+      background: #eff6ff;
+    }
+
+    .convert-button {
+      width: 100%;
+      padding: 15px;
+      border: none;
+      border-radius: 10px;
+      background: #2563eb;
+      color: #ffffff;
+      font-size: 17px;
+      font-weight: 700;
+      cursor: pointer;
+      margin-top: 5px;
+    }
+
+    .convert-button:hover {
+      background: #1d4ed8;
+    }
+
+    .result {
+      display: none;
+      margin-top: 25px;
+      padding: 22px;
+      border-radius: 14px;
+      background: #eff6ff;
+      text-align: center;
+    }
+
+    .result-text {
+      font-size: 27px;
+      font-weight: 700;
+      color: #1d4ed8;
+      word-break: break-word;
+    }
+
+    .formula {
+      margin-top: 10px;
+      color: #4b5563;
+      font-size: 14px;
+    }
+
+    .error {
+      display: none;
+      margin-top: 18px;
+      padding: 14px;
+      border-radius: 10px;
+      background: #fef2f2;
+      color: #b91c1c;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    .info {
+      margin-top: 35px;
+      background: #ffffff;
+      padding: 25px;
+      border-radius: 14px;
+      border: 1px solid #e5e7eb;
+    }
+
+    .info h2 {
+      margin-bottom: 12px;
+      color: #111827;
+    }
+
+    .info p {
+      color: #6b7280;
+      margin-bottom: 10px;
+      line-height: 1.7;
+    }
+
+    footer {
+      margin-top: 60px;
+      background: #111827;
+      color: #d1d5db;
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    footer a {
+      color: #ffffff;
+      text-decoration: none;
+      margin: 0 8px;
+    }
+
+    footer p {
+      margin-top: 12px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 600px) {
+      main {
+        margin: 35px auto;
+      }
+
+      .intro h1 {
+        font-size: 31px;
+      }
+
+      .converter {
+        padding: 22px;
+      }
+
+      .result-text {
+        font-size: 22px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="header-content">
+
+      <a href="index.html" class="logo">
+        Conversion Tools
+      </a>
+
+      <a href="index.html" class="home-link">
+        ← Home
+      </a>
+
+    </div>
+  </header>
+
+  <main>
+
+    <section class="intro">
+
+      <h1>Weight Converter</h1>
+
+      <p>
+        Convert weight and mass units quickly and accurately.
+      </p>
+
+    </section>
+
+    <section class="converter">
+
+      <div class="field">
+
+        <label for="amount">
+          Amount
+        </label>
+
+        <input
+          type="number"
+          id="amount"
+          value="1"
+          min="0"
+          step="any"
+          placeholder="Enter amount"
+        >
+
+      </div>
+
+      <div class="field">
+
+        <label for="fromUnit">
+          From
+        </label>
+
+        <select id="fromUnit">
+
+          <option value="kilogram">
+            Kilogram (kg)
+          </option>
+
+          <option value="gram">
+            Gram (g)
+          </option>
+
+          <option value="milligram">
+            Milligram (mg)
+          </option>
+
+          <option value="microgram">
+            Microgram (µg)
+          </option>
+
+          <option value="metric-ton">
+            Metric Ton (t)
+          </option>
+
+          <option value="pound">
+            Pound (lb)
+          </option>
+
+          <option value="ounce">
+            Ounce (oz)
+          </option>
+
+          <option value="stone">
+            Stone (st)
+          </option>
+
+        </select>
+
+      </div>
+
+      <div class="swap-container">
+
+        <button
+          type="button"
+          class="swap-button"
+          onclick="swapUnits()"
+          title="Swap units"
+        >
+          ⇅
+        </button>
+
+      </div>
+
+      <div class="field">
+
+        <label for="toUnit">
+          To
+        </label>
+
+        <select id="toUnit">
+
+          <option value="gram">
+            Gram (g)
+          </option>
+
+          <option value="kilogram">
+            Kilogram (kg)
+          </option>
+
+          <option value="milligram">
+            Milligram (mg)
+          </option>
+
+          <option value="microgram">
+            Microgram (µg)
+          </option>
+
+          <option value="metric-ton">
+            Metric Ton (t)
+          </option>
+
+          <option value="pound">
+            Pound (lb)
+          </option>
+
+          <option value="ounce">
+            Ounce (oz)
+          </option>
+
+          <option value="stone">
+            Stone (st)
+          </option>
+
+        </select>
+
+      </div>
+
+      <button
+        type="button"
+        class="convert-button"
+        onclick="convertWeight()"
+      >
+        Convert
+      </button>
+
+      <div class="error" id="error"></div>
+
+      <div class="result" id="result">
+
+        <div
+          class="result-text"
+          id="resultText"
+        ></div>
+
+        <div
+          class="formula"
+          id="formulaText"
+        ></div>
+
+      </div>
+
+    </section>
+
+    <section class="info">
+
+      <h2>
+        About Weight Conversion
+      </h2>
+
+      <p>
+        Weight conversion allows you to convert measurements between
+        different units of mass.
+      </p>
+
+      <p>
+        This tool supports kilograms, grams, milligrams, micrograms,
+        metric tons, pounds, ounces and stones.
+      </p>
+
+      <p>
+        Enter a value, choose the original unit and select the unit
+        you want to convert to.
+      </p>
+
+    </section>
+
+  </main>
+
+  <footer>
+
+    <a href="index.html">
+      Home
+    </a>
+
+    <a href="currency-converter.html">
+      Currency Converter
+    </a>
+
+    <a href="length-converter.html">
+      Length Converter
+    </a>
+
+    <a href="weight-converter.html">
+      Weight Converter
+    </a>
+
+    <p>
+      © 2026 Conversion Tools. All rights reserved.
+    </p>
+
+  </footer>
+
+  <script>
+
+    /*
+      Conversion factors relative to one kilogram.
+    */
+
+    const weightUnits = {
+
+      kilogram: 1,
+
+      gram: 0.001,
+
+      milligram: 0.000001,
+
+      microgram: 0.000000001,
+
+      "metric-ton": 1000,
+
+      pound: 0.45359237,
+
+      ounce: 0.028349523125,
+
+      stone: 6.35029318
+
+    };
+
+
+    const unitNames = {
+
+      kilogram: "kg",
+
+      gram: "g",
+
+      milligram: "mg",
+
+      microgram: "µg",
+
+      "metric-ton": "t",
+
+      pound: "lb",
+
+      ounce: "oz",
+
+      stone: "st"
+
+    };
+
+
+    function convertWeight() {
+
+      const amount =
+        Number(
+          document.getElementById("amount").value
+        );
+
+      const from =
+        document.getElementById("fromUnit").value;
+
+      const to =
+        document.getElementById("toUnit").value;
+
+      const result =
+        document.getElementById("result");
+
+      const resultText =
+        document.getElementById("resultText");
+
+      const formulaText =
+        document.getElementById("formulaText");
+
+      const error =
+        document.getElementById("error");
+
+
+      error.style.display = "none";
+
+      result.style.display = "none";
+
+
+      if (!Number.isFinite(amount) || amount < 0) {
+
+        error.textContent =
+          "Please enter a valid amount.";
+
+        error.style.display =
+          "block";
+
+        return;
+      }
+
+
+      /*
+        First convert the value to kilograms.
+      */
+
+      const kilograms =
+        amount * weightUnits[from];
+
+
+      /*
+        Then convert kilograms to the target unit.
+      */
+
+      const converted =
+        kilograms / weightUnits[to];
+
+
+      resultText.textContent =
+        formatNumber(amount) +
+        " " +
+        unitNames[from] +
+        " = " +
+        formatNumber(converted) +
+        " " +
+        unitNames[to];
+
+
+      const oneUnit =
+        weightUnits[from] /
+        weightUnits[to];
+
+
+      formulaText.textContent =
+        "1 " +
+        unitNames[from] +
+        " = " +
+        formatNumber(oneUnit) +
+        " " +
+        unitNames[to];
+
+
+      result.style.display =
+        "block";
+    }
+
+
+    function swapUnits() {
+
+      const from =
+        document.getElementById("fromUnit");
+
+      const to =
+        document.getElementById("toUnit");
+
+
+      const temporary =
+        from.value;
+
+
+      from.value =
+        to.value;
+
+
+      to.value =
+        temporary;
+
+
+      document.getElementById(
+        "result"
+      ).style.display = "none";
+
+
+      document.getElementById(
+        "error"
+      ).style.display = "none";
+    }
+
+
+    function formatNumber(number) {
+
+      return Number(number).toLocaleString(
+        undefined,
+        {
+          maximumFractionDigits: 12
+        }
+      );
+
+    }
+
+  </script>
+
+</body>
+</html>
