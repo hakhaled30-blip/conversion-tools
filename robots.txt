@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://hakhaled30-blip.github.io/conversion-tools/sitemap.xml
