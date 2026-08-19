@@ -2,31 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
+  <title>Conversion Tools - Free Online Conversion Calculators</title>
 
-  <title>Conversion Tools - Free Online Converters</title>
+  <meta name="description" content="Free online conversion tools for currency, length, weight, temperature, area, volume, speed and time. Fast, simple and mobile friendly.">
 
-  <meta
-    name="description"
-    content="Free online conversion tools for currencies, length, weight, temperature, area, volume, speed and time. Fast, simple and accurate."
-  >
+  <meta name="robots" content="index, follow">
 
-  <meta
-    name="robots"
-    content="index, follow"
-  >
-
-  <link
-    rel="canonical"
-    href="https://hakhaled30-blip.github.io/conversion-tools/"
-  >
+  <link rel="canonical" href="https://hakhaled30-blip.github.io/conversion-tools/">
 
   <style>
-
     * {
       box-sizing: border-box;
       margin: 0;
@@ -34,32 +20,29 @@
     }
 
     body {
-      font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
+      font-family: Arial, Helvetica, sans-serif;
       background: #f5f7fb;
       color: #1f2937;
       min-height: 100vh;
       line-height: 1.6;
     }
 
-    /* HEADER */
-
     header {
       background: #ffffff;
       border-bottom: 1px solid #e5e7eb;
       padding: 18px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
 
     .header-content {
       max-width: 1100px;
       margin: auto;
-
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 20px;
     }
 
     .logo {
@@ -67,723 +50,503 @@
       text-decoration: none;
       font-size: 23px;
       font-weight: 700;
+      white-space: nowrap;
     }
 
-    .nav-link {
+    .header-nav {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .header-nav a {
       color: #374151;
       text-decoration: none;
-      font-size: 15px;
+      font-size: 14px;
+      font-weight: 600;
     }
 
-    .nav-link:hover {
+    .header-nav a:hover {
       color: #2563eb;
     }
-
-    /* HERO */
-
-    .hero {
-      max-width: 1000px;
-      margin: 60px auto 40px;
-      padding: 0 20px;
-      text-align: center;
-    }
-
-    .hero h1 {
-      font-size: 46px;
-      line-height: 1.2;
-      color: #111827;
-      margin-bottom: 18px;
-    }
-
-    .hero p {
-      max-width: 700px;
-      margin: auto;
-
-      color: #6b7280;
-      font-size: 18px;
-    }
-
-    /* SEARCH */
-
-    .search-container {
-      max-width: 650px;
-      margin: 30px auto 0;
-      padding: 0 20px;
-    }
-
-    .search-box {
-      width: 100%;
-
-      padding: 16px 18px;
-
-      border: 1px solid #d1d5db;
-      border-radius: 12px;
-
-      background: #ffffff;
-
-      font-size: 16px;
-
-      outline: none;
-
-      box-shadow:
-        0 5px 20px rgba(0, 0, 0, 0.04);
-    }
-
-    .search-box:focus {
-      border-color: #2563eb;
-    }
-
-    /* MAIN */
 
     main {
       max-width: 1100px;
       margin: 0 auto;
-      padding: 0 20px 60px;
+      padding: 55px 20px 70px;
+    }
+
+    .hero {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .hero h1 {
+      color: #111827;
+      font-size: 46px;
+      line-height: 1.2;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      max-width: 700px;
+      margin: 0 auto;
+      color: #6b7280;
+      font-size: 18px;
+    }
+
+    .search-box {
+      max-width: 650px;
+      margin: 28px auto 0;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 16px 18px;
+      border: 1px solid #d1d5db;
+      border-radius: 12px;
+      font-size: 16px;
+      background: #ffffff;
+      outline: none;
+    }
+
+    .search-box input:focus {
+      border-color: #2563eb;
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.10);
     }
 
     .section-title {
       text-align: center;
-      margin-bottom: 28px;
-    }
-
-    .section-title h2 {
-      font-size: 30px;
       color: #111827;
-      margin-bottom: 8px;
+      font-size: 30px;
+      margin-bottom: 25px;
     }
-
-    .section-title p {
-      color: #6b7280;
-      font-size: 15px;
-    }
-
-    /* TOOLS GRID */
 
     .tools-grid {
       display: grid;
-
-      grid-template-columns:
-        repeat(4, 1fr);
-
-      gap: 20px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
     }
 
     .tool-card {
       display: block;
-
       background: #ffffff;
-
       border: 1px solid #e5e7eb;
-
       border-radius: 16px;
-
-      padding: 25px;
-
+      padding: 25px 20px;
       text-decoration: none;
-
       color: inherit;
-
-      transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease,
-        border-color 0.2s ease;
+      transition: transform 0.2s ease, box-shadow 0.2s ease,
+                  border-color 0.2s ease;
     }
 
     .tool-card:hover {
       transform: translateY(-4px);
-
       border-color: #bfdbfe;
-
-      box-shadow:
-        0 12px 30px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
     }
 
     .tool-icon {
-      width: 52px;
-      height: 52px;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      background: #eff6ff;
-
-      border-radius: 12px;
-
-      font-size: 27px;
-
-      margin-bottom: 18px;
+      font-size: 35px;
+      margin-bottom: 13px;
     }
 
     .tool-card h3 {
-      font-size: 19px;
-
       color: #111827;
-
+      font-size: 20px;
       margin-bottom: 8px;
     }
 
     .tool-card p {
       color: #6b7280;
-
       font-size: 14px;
-
       line-height: 1.6;
+      margin-bottom: 15px;
     }
 
-    .tool-link {
-      display: inline-block;
-
-      margin-top: 15px;
-
+    .open-link {
       color: #2563eb;
-
       font-size: 14px;
-
       font-weight: 700;
     }
 
-    /* ABOUT */
-
     .about {
-      max-width: 900px;
-
-      margin: 55px auto 0;
-
+      margin-top: 55px;
       background: #ffffff;
-
       border: 1px solid #e5e7eb;
-
       border-radius: 16px;
-
-      padding: 30px;
+      padding: 32px;
     }
 
     .about h2 {
       color: #111827;
-
-      font-size: 25px;
-
+      font-size: 28px;
       margin-bottom: 15px;
     }
 
     .about p {
       color: #6b7280;
-
-      margin-bottom: 12px;
-
-      line-height: 1.8;
+      margin-bottom: 14px;
     }
 
-    /* FEATURES */
-
     .features {
-      margin-top: 30px;
-
       display: grid;
-
-      grid-template-columns:
-        repeat(3, 1fr);
-
+      grid-template-columns: repeat(3, 1fr);
       gap: 18px;
+      margin-top: 28px;
     }
 
     .feature {
-      background: #ffffff;
-
-      border: 1px solid #e5e7eb;
-
+      background: #f8fafc;
       border-radius: 14px;
-
       padding: 22px;
-
       text-align: center;
     }
 
     .feature-icon {
-      font-size: 25px;
-
-      margin-bottom: 10px;
+      font-size: 30px;
+      margin-bottom: 8px;
     }
 
     .feature h3 {
       color: #111827;
-
-      font-size: 17px;
-
+      font-size: 18px;
       margin-bottom: 6px;
     }
 
     .feature p {
-      color: #6b7280;
-
       font-size: 14px;
+      margin-bottom: 0;
     }
-
-    /* FOOTER */
 
     footer {
       background: #111827;
-
       color: #d1d5db;
-
       text-align: center;
-
-      padding: 35px 20px;
+      padding: 32px 20px;
     }
 
     .footer-links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px 18px;
       margin-bottom: 15px;
     }
 
-    footer a {
+    .footer-links a {
       color: #ffffff;
-
       text-decoration: none;
-
-      margin: 0 7px;
-
       font-size: 14px;
     }
 
-    footer a:hover {
-      text-decoration: underline;
+    .footer-links a:hover {
+      color: #93c5fd;
     }
 
     footer p {
-      font-size: 14px;
-
       color: #9ca3af;
-
-      margin-top: 10px;
+      font-size: 14px;
     }
 
-    /* HIDDEN SEARCH ITEMS */
-
-    .hidden {
+    .no-results {
       display: none;
+      text-align: center;
+      color: #6b7280;
+      padding: 25px;
+      background: #ffffff;
+      border-radius: 12px;
+      margin-top: 15px;
     }
-
-    /* MOBILE */
 
     @media (max-width: 900px) {
-
       .tools-grid {
-        grid-template-columns:
-          repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr);
       }
 
-      .hero h1 {
-        font-size: 40px;
+      .features {
+        grid-template-columns: 1fr;
       }
-
     }
 
     @media (max-width: 600px) {
-
       header {
-        padding: 15px;
+        position: static;
       }
 
       .header-content {
-        gap: 10px;
+        flex-direction: column;
       }
 
-      .logo {
-        font-size: 20px;
+      .header-nav {
+        gap: 12px;
       }
 
-      .hero {
-        margin-top: 40px;
+      main {
+        padding: 38px 15px 55px;
       }
 
       .hero h1 {
-        font-size: 32px;
+        font-size: 34px;
       }
 
       .hero p {
         font-size: 16px;
       }
 
+      .section-title {
+        font-size: 26px;
+      }
+
       .tools-grid {
         grid-template-columns: 1fr;
       }
 
-      .features {
-        grid-template-columns: 1fr;
-      }
-
       .about {
-        padding: 22px;
+        padding: 24px 20px;
       }
-
-      .section-title h2 {
-        font-size: 26px;
-      }
-
     }
-
   </style>
 </head>
 
 <body>
 
-  <!-- HEADER -->
+<header>
+  <div class="header-content">
 
-  <header>
+    <a href="index.html" class="logo">
+      Conversion Tools
+    </a>
 
-    <div class="header-content">
+    <nav class="header-nav">
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+  </div>
+</header>
+
+<main>
+
+  <section class="hero">
+
+    <h1>Conversion Tools</h1>
+
+    <p>
+      Convert currencies, units, measurements and more quickly and easily.
+      Simple, fast and free tools for everyone.
+    </p>
+
+    <div class="search-box">
+      <input
+        type="search"
+        id="toolSearch"
+        placeholder="Search for a conversion tool..."
+        aria-label="Search for a conversion tool"
+      >
+    </div>
+
+  </section>
+
+  <section>
+
+    <h2 class="section-title">
+      Popular Conversion Tools
+    </h2>
+
+    <div class="tools-grid" id="toolsGrid">
 
       <a
-        href="index.html"
-        class="logo"
+        href="currency-converter.html"
+        class="tool-card"
+        data-name="currency currency converter money exchange"
       >
-        Conversion Tools
+        <div class="tool-icon">💱</div>
+
+        <h3>Currency Converter</h3>
+
+        <p>
+          Convert currencies quickly and easily using exchange rates.
+        </p>
+
+        <span class="open-link">
+          Open Converter →
+        </span>
       </a>
 
+
       <a
-        href="#tools"
-        class="nav-link"
+        href="length-converter.html"
+        class="tool-card"
+        data-name="length distance meter kilometer mile converter"
       >
-        Conversion Tools
+        <div class="tool-icon">📏</div>
+
+        <h3>Length Converter</h3>
+
+        <p>
+          Convert meters, kilometers, miles and other length units.
+        </p>
+
+        <span class="open-link">
+          Open Converter →
+        </span>
+      </a>
+
+
+      <a
+        href="weight-converter.html"
+        class="tool-card"
+        data-name="weight mass kilogram gram pound converter"
+      >
+        <div class="tool-icon">⚖️</div>
+
+        <h3>Weight Converter</h3>
+
+        <p>
+          Convert kilograms, grams, pounds and other weight units.
+        </p>
+
+        <span class="open-link">
+          Open Converter →
+        </span>
+      </a>
+
+
+      <a
+        href="temperature-converter.html"
+        class="tool-card"
+        data-name="temperature celsius fahrenheit kelvin converter"
+      >
+        <div class="tool-icon">🌡️</div>
+
+        <h3>Temperature Converter</h3>
+
+        <p>
+          Convert Celsius, Fahrenheit, Kelvin and other temperatures.
+        </p>
+
+        <span class="open-link">
+          Open Converter →
+        </span>
+      </a>
+
+
+      <a
+        href="area-converter.html"
+        class="tool-card"
+        data-name="area square meter acre hectare converter"
+      >
+        <div class="tool-icon">📐</div>
+
+        <h3>Area Converter</h3>
+
+        <p>
+          Convert square meters, acres, hectares and more.
+        </p>
+
+        <span class="open-link">
+          Open Converter →
+        </span>
+      </a>
+
+
+      <a
+        href="volume-converter.html"
+        class="tool-card"
+        data-name="volume liter milliliter gallon converter"
+      >
+        <div class="tool-icon">🧊</div>
+
+        <h3>Volume Converter</h3>
+
+        <p>
+          Convert liters, milliliters, gallons and other volume units.
+        </p>
+
+        <span class="open-link">
+          Open Converter →
+        </span>
+      </a>
+
+
+      <a
+        href="speed-converter.html"
+        class="tool-card"
+        data-name="speed kilometer hour mph meter second knot converter"
+      >
+        <div class="tool-icon">🚗</div>
+
+        <h3>Speed Converter</h3>
+
+        <p>
+          Convert km/h, mph, m/s, knots and other speed units.
+        </p>
+
+        <span class="open-link">
+          Open Converter →
+        </span>
+      </a>
+
+
+      <a
+        href="time-converter.html"
+        class="tool-card"
+        data-name="time second minute hour day week year converter"
+      >
+        <div class="tool-icon">⏱️</div>
+
+        <h3>Time Converter</h3>
+
+        <p>
+          Convert seconds, minutes, hours, days, weeks and years.
+        </p>
+
+        <span class="open-link">
+          Open Converter →
+        </span>
       </a>
 
     </div>
 
-  </header>
-
-
-  <!-- HERO -->
-
-  <section class="hero">
-
-    <h1>
-      Free Online Conversion Tools
-    </h1>
-
-    <p>
-      Convert currencies, units, measurements and more
-      quickly and easily. Simple, fast and free tools
-      for everyone.
-    </p>
+    <div class="no-results" id="noResults">
+      No conversion tool found.
+    </div>
 
   </section>
 
 
-  <!-- SEARCH -->
+  <section class="about">
 
-  <div class="search-container">
+    <h2>About Conversion Tools</h2>
 
-    <input
-      type="search"
-      id="searchBox"
-      class="search-box"
-      placeholder="Search for a conversion tool..."
-      aria-label="Search conversion tools"
-    >
+    <p>
+      Conversion Tools is a free online platform designed to make
+      everyday conversions simple, fast and accessible from any device.
+    </p>
 
-  </div>
+    <p>
+      Our collection includes useful tools for currency, length,
+      weight, temperature, area, volume, speed and time conversions.
+    </p>
 
+    <p>
+      Select any converter above, enter your value, choose the units
+      and get your result instantly.
+    </p>
 
-  <!-- MAIN -->
 
-  <main>
-
-    <section id="tools">
-
-      <div class="section-title">
-
-        <h2>
-          Popular Conversion Tools
-        </h2>
-
-        <p>
-          Choose a tool below to start converting.
-        </p>
-
-      </div>
-
-
-      <div
-        class="tools-grid"
-        id="toolsGrid"
-      >
-
-
-        <!-- CURRENCY -->
-
-        <a
-          href="currency-converter.html"
-          class="tool-card"
-          data-name="currency currencies money exchange"
-        >
-
-          <div class="tool-icon">
-            💱
-          </div>
-
-          <h3>
-            Currency Converter
-          </h3>
-
-          <p>
-            Convert currencies using updated
-            exchange rates.
-          </p>
-
-          <span class="tool-link">
-            Open Converter →
-          </span>
-
-        </a>
-
-
-        <!-- LENGTH -->
-
-        <a
-          href="length-converter.html"
-          class="tool-card"
-          data-name="length distance meter kilometer mile"
-        >
-
-          <div class="tool-icon">
-            📏
-          </div>
-
-          <h3>
-            Length Converter
-          </h3>
-
-          <p>
-            Convert meters, kilometers, miles,
-            feet, inches and more.
-          </p>
-
-          <span class="tool-link">
-            Open Converter →
-          </span>
-
-        </a>
-
-
-        <!-- WEIGHT -->
-
-        <a
-          href="weight-converter.html"
-          class="tool-card"
-          data-name="weight mass kilogram gram pound ounce"
-        >
-
-          <div class="tool-icon">
-            ⚖️
-          </div>
-
-          <h3>
-            Weight Converter
-          </h3>
-
-          <p>
-            Convert kilograms, grams, pounds,
-            ounces and other units.
-          </p>
-
-          <span class="tool-link">
-            Open Converter →
-          </span>
-
-        </a>
-
-
-        <!-- TEMPERATURE -->
-
-        <a
-          href="temperature-converter.html"
-          class="tool-card"
-          data-name="temperature celsius fahrenheit kelvin"
-        >
-
-          <div class="tool-icon">
-            🌡️
-          </div>
-
-          <h3>
-            Temperature Converter
-          </h3>
-
-          <p>
-            Convert Celsius, Fahrenheit and
-            Kelvin temperatures.
-          </p>
-
-          <span class="tool-link">
-            Open Converter →
-          </span>
-
-        </a>
-
-
-        <!-- AREA -->
-
-        <a
-          href="area-converter.html"
-          class="tool-card"
-          data-name="area square meter acre hectare"
-        >
-
-          <div class="tool-icon">
-            📐
-          </div>
-
-          <h3>
-            Area Converter
-          </h3>
-
-          <p>
-            Convert square meters, acres,
-            hectares and more.
-          </p>
-
-          <span class="tool-link">
-            Open Converter →
-          </span>
-
-        </a>
-
-
-        <!-- VOLUME -->
-
-        <a
-          href="volume-converter.html"
-          class="tool-card"
-          data-name="volume liter milliliter gallon"
-        >
-
-          <div class="tool-icon">
-            🧊
-          </div>
-
-          <h3>
-            Volume Converter
-          </h3>
-
-          <p>
-            Convert liters, milliliters,
-            gallons and other units.
-          </p>
-
-          <span class="tool-link">
-            Open Converter →
-          </span>
-
-        </a>
-
-
-        <!-- SPEED -->
-
-        <a
-          href="speed-converter.html"
-          class="tool-card"
-          data-name="speed kilometer hour mile mph knot"
-        >
-
-          <div class="tool-icon">
-            🚗
-          </div>
-
-          <h3>
-            Speed Converter
-          </h3>
-
-          <p>
-            Convert km/h, mph, m/s, knots
-            and other speed units.
-          </p>
-
-          <span class="tool-link">
-            Open Converter →
-          </span>
-
-        </a>
-
-
-        <!-- TIME -->
-
-        <a
-          href="time-converter.html"
-          class="tool-card"
-          data-name="time second minute hour day week month year"
-        >
-
-          <div class="tool-icon">
-            ⏱️
-          </div>
-
-          <h3>
-            Time Converter
-          </h3>
-
-          <p>
-            Convert seconds, minutes, hours,
-            days, weeks and years.
-          </p>
-
-          <span class="tool-link">
-            Open Converter →
-          </span>
-
-        </a>
-
-
-      </div>
-
-    </section>
-
-
-    <!-- ABOUT -->
-
-    <section class="about">
-
-      <h2>
-        About Conversion Tools
-      </h2>
-
-      <p>
-        Conversion Tools is a free online platform
-        designed to make everyday conversions simple,
-        fast and accessible from any device.
-      </p>
-
-      <p>
-        Our collection includes useful tools for
-        currency, length, weight, temperature, area,
-        volume, speed and time conversions.
-      </p>
-
-      <p>
-        Select any converter above, enter your value,
-        choose the units and get your result instantly.
-      </p>
-
-    </section>
-
-
-    <!-- FEATURES -->
-
-    <section class="features">
+    <div class="features">
 
       <div class="feature">
 
-        <div class="feature-icon">
-          ⚡
-        </div>
+        <div class="feature-icon">⚡</div>
 
-        <h3>
-          Fast
-        </h3>
+        <h3>Fast</h3>
 
         <p>
-          Get conversion results quickly
-          without complicated steps.
+          Get conversion results quickly without complicated steps.
         </p>
 
       </div>
@@ -791,17 +554,12 @@
 
       <div class="feature">
 
-        <div class="feature-icon">
-          📱
-        </div>
+        <div class="feature-icon">📱</div>
 
-        <h3>
-          Mobile Friendly
-        </h3>
+        <h3>Mobile Friendly</h3>
 
         <p>
-          Designed to work smoothly
-          on phones, tablets and computers.
+          Designed to work smoothly on phones, tablets and computers.
         </p>
 
       </div>
@@ -809,128 +567,103 @@
 
       <div class="feature">
 
-        <div class="feature-icon">
-          🆓
-        </div>
+        <div class="feature-icon">🆓</div>
 
-        <h3>
-          Free to Use
-        </h3>
+        <h3>Free to Use</h3>
 
         <p>
-          Our conversion tools are
-          available online for free.
+          Our conversion tools are available online for free.
         </p>
 
       </div>
-
-    </section>
-
-  </main>
-
-
-  <!-- FOOTER -->
-
-  <footer>
-
-    <div class="footer-links">
-
-      <a href="index.html">
-        Home
-      </a>
-
-      <a href="currency-converter.html">
-        Currency
-      </a>
-
-      <a href="length-converter.html">
-        Length
-      </a>
-
-      <a href="weight-converter.html">
-        Weight
-      </a>
-
-      <a href="temperature-converter.html">
-        Temperature
-      </a>
-
-      <a href="area-converter.html">
-        Area
-      </a>
-
-      <a href="volume-converter.html">
-        Volume
-      </a>
-
-      <a href="speed-converter.html">
-        Speed
-      </a>
-
-      <a href="time-converter.html">
-        Time
-      </a>
 
     </div>
 
-    <p>
-      © 2026 Conversion Tools. All rights reserved.
-    </p>
+  </section>
 
-  </footer>
+</main>
 
 
-  <!-- SEARCH SCRIPT -->
+<footer>
 
-  <script>
+  <div class="footer-links">
 
-    const searchBox =
-      document.getElementById("searchBox");
+    <a href="index.html">
+      Home
+    </a>
 
-    const toolCards =
-      document.querySelectorAll(".tool-card");
+    <a href="about.html">
+      About Us
+    </a>
+
+    <a href="contact.html">
+      Contact
+    </a>
+
+    <a href="privacy-policy.html">
+      Privacy Policy
+    </a>
+
+    <a href="terms.html">
+      Terms
+    </a>
+
+  </div>
+
+  <p>
+    © 2026 Conversion Tools. All rights reserved.
+  </p>
+
+</footer>
 
 
-    searchBox.addEventListener(
-      "input",
-      function () {
+<script>
 
-        const searchTerm =
-          this.value
-            .toLowerCase()
-            .trim();
+  const searchInput = document.getElementById("toolSearch");
+  const toolCards = document.querySelectorAll(".tool-card");
+  const noResults = document.getElementById("noResults");
 
+  searchInput.addEventListener("input", function () {
 
-        toolCards.forEach(
-          function (card) {
+    const searchTerm =
+      this.value.toLowerCase().trim();
 
-            const searchableText =
-              (
-                card.textContent +
-                " " +
-                card.dataset.name
-              ).toLowerCase();
+    let visibleTools = 0;
 
+    toolCards.forEach(function (card) {
 
-            if (
-              searchableText.includes(searchTerm)
-            ) {
+      const searchableText =
+        card.getAttribute("data-name").toLowerCase();
 
-              card.classList.remove("hidden");
+      if (
+        searchTerm === "" ||
+        searchableText.includes(searchTerm)
+      ) {
 
-            } else {
+        card.style.display = "block";
+        visibleTools++;
 
-              card.classList.add("hidden");
+      } else {
 
-            }
-
-          }
-        );
+        card.style.display = "none";
 
       }
-    );
 
-  </script>
+    });
+
+    if (visibleTools === 0) {
+
+      noResults.style.display = "block";
+
+    } else {
+
+      noResults.style.display = "none";
+
+    }
+
+  });
+
+</script>
 
 </body>
 </html>
