@@ -9,39 +9,60 @@
             font-family: Tahoma, Arial, sans-serif;
             background-color: #f4f7f6;
             color: #333;
-            text-align: center;
-            padding: 50px;
             margin: 0;
+            padding: 0;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: white;
+            padding: 15px 30px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .logo {
+            font-weight: bold;
+            font-size: 18px;
+            color: #2c3e50;
+            text-decoration: none;
+        }
+        .lang-btn {
+            background-color: #3498db;
+            color: white;
+            padding: 8px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        .lang-btn:hover {
+            background-color: #2980b9;
         }
         .container {
-            max-width: 600px;
-            margin: auto;
+            max-width: 700px;
+            margin: 50px auto;
             background: white;
-            padding: 30px;
+            padding: 40px;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            text-align: center;
         }
         h1 { color: #2c3e50; }
         p { color: #555; line-height: 1.6; }
-        .lang-link {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            background-color: #3498db;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-        }
-        .lang-link:hover { background-color: #2980b9; }
     </style>
 </head>
 <body>
+
+    <header>
+        <a href="#" class="logo">أدوات التحويل</a>
+        <!-- زر التحويل للغة الإنجليزية -->
+        <a href="../index.html" class="lang-btn">English</a>
+    </header>
+
     <div class="container">
         <h1>أهلاً بك في أدوات التحويل</h1>
-        <p>موقعك المفضل للتحويل السريع والدقيق للعملات والوحدات المختلفة بكل سهولة وبدون إعلانات مزعجة.</p>
-        <p>قريباً سيتم إضافة جميع الأدوات هنا باللغة العربية.</p>
-        
-        <a href="../index.html" class="lang-link">Switch to English</a>
+        <p>منصتك السريعة والمجانية للتحويل بين العملات ووحدات القياس المختلفة بكل دقة وبدون إعلانات مزعجة.</p>
+        <p>نحن نعمل على تجهيز الأدوات باللغة العربية لتكون متاحة قريباً جداً!</p>
     </div>
+
 </body>
 </html>
