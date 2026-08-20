@@ -1,6 +1,23 @@
+currency-converter.html — النسخة الكاملة
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-K3YW32Z03B"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', 'G-K3YW32Z03B');
+  </script>
+  <!-- End Google Analytics -->
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -258,6 +275,7 @@
       }
     }
   </style>
+
 </head>
 
 <body>
@@ -282,11 +300,15 @@
 <main>
 
   <section class="hero">
-    <h1 id="pageTitle">Currency Converter</h1>
+
+    <h1 id="pageTitle">
+      Currency Converter
+    </h1>
 
     <p id="pageDescription">
       Convert currencies using updated exchange rates.
     </p>
+
   </section>
 
 
@@ -642,6 +664,7 @@ function populateCurrencies() {
 
   from.value = "USD";
   to.value = "EUR";
+
 }
 
 
@@ -713,6 +736,7 @@ function convertCurrency() {
       translations[currentLanguage].invalid;
 
     return;
+
   }
 
 
@@ -725,6 +749,7 @@ function convertCurrency() {
       translations[currentLanguage].error;
 
     return;
+
   }
 
 
@@ -763,8 +788,7 @@ function convertCurrency() {
     amount + " " +
     from +
     " = " +
-    formattedResult +
-    " " +
+    formattedResult + " " +
     to;
 
 
@@ -785,6 +809,10 @@ function setLanguage(language) {
 
   const t =
     translations[language];
+
+  if (!t) {
+    return;
+  }
 
   document.documentElement.lang =
     language;
