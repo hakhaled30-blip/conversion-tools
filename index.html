@@ -25,46 +25,87 @@
             font-size: 18px;
             color: #2c3e50;
         }
-        .lang-switcher button {
-            background-color: #3498db;
-            color: white;
-            border: none;
-            padding: 6px 12px;
-            margin-left: 5px;
-            border-radius: 4px;
-            cursor: pointer;
+        .lang-select {
+            padding: 8px 12px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            background-color: white;
             font-size: 14px;
-        }
-        .lang-switcher button:hover {
-            background-color: #2980b9;
+            cursor: pointer;
+            color: #333;
         }
         .container {
-            max-width: 700px;
-            margin: 50px auto;
-            background: white;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 0 20px;
             text-align: center;
         }
-        h1 { color: #2c3e50; }
-        p { color: #555; line-height: 1.6; }
+        h1 { color: #2c3e50; margin-bottom: 10px; }
+        .desc { color: #555; margin-bottom: 30px; }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+            text-align: start;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+        .card h3 { color: #2c3e50; margin-top: 0; }
+        .card p { color: #666; font-size: 14px; line-height: 1.5; }
+        .card a {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+            display: inline-block;
+            margin-top: 10px;
+        }
     </style>
 </head>
 <body>
 
     <header>
         <div class="logo" id="txt-logo">Conversion Tools</div>
-        <div class="lang-switcher">
-            <button onclick="setLanguage('en')">English</button>
-            <button onclick="setLanguage('ar')">العربية</button>
-            <button onclick="setLanguage('fr')">Français</button>
+        <!-- قائمة منسدلة واحدة لاختيار اللغة -->
+        <div>
+            <select id="language-select" class="lang-select" onchange="changeLanguage(this.value)">
+                <option value="en">English</option>
+                <option value="ar">العربية</option>
+                <option value="fr">Français</option>
+            </select>
         </div>
     </header>
 
     <div class="container">
         <h1 id="txt-heading">Free Online Conversion Tools</h1>
-        <p id="txt-desc">Convert currencies, measurements, and units quickly and easily without annoying ads.</p>
+        <p class="desc" id="txt-desc">Convert currencies, measurements, and units quickly and easily.</p>
+
+        <div class="grid">
+            <div class="card">
+                <h3 id="card1-title">Currency Converter</h3>
+                <p id="card1-desc">Convert currencies quickly using live exchange rates.</p>
+                <a href="#" id="card1-link">Open Converter →</a>
+            </div>
+            <div class="card">
+                <h3 id="card2-title">Length Converter</h3>
+                <p id="card2-desc">Convert meters, kilometers, miles and other length units.</p>
+                <a href="#" id="card2-link">Open Converter →</a>
+            </div>
+            <div class="card">
+                <h3 id="card3-title">Weight Converter</h3>
+                <p id="card3-desc">Convert kilograms, grams, pounds and other weight units.</p>
+                <a href="#" id="card3-link">Open Converter →</a>
+            </div>
+            <div class="card">
+                <h3 id="card4-title">Temperature Converter</h3>
+                <p id="card4-desc">Convert Celsius, Fahrenheit, Kelvin and other temperatures.</p>
+                <a href="#" id="card4-link">Open Converter →</a>
+            </div>
+        </div>
     </div>
 
     <script>
@@ -74,25 +115,37 @@
                 title: "Conversion Tools",
                 logo: "Conversion Tools",
                 heading: "Free Online Conversion Tools",
-                desc: "Convert currencies, measurements, and units quickly and easily without annoying ads."
+                desc: "Convert currencies, measurements, and units quickly and easily.",
+                c1t: "Currency Converter", c1d: "Convert currencies quickly using live exchange rates.", c1l: "Open Converter →",
+                c2t: "Length Converter", c2d: "Convert meters, kilometers, miles and other length units.", c2l: "Open Converter →",
+                c3t: "Weight Converter", c3d: "Convert kilograms, grams, pounds and other weight units.", c3l: "Open Converter →",
+                c4t: "Temperature Converter", c4d: "Convert Celsius, Fahrenheit, Kelvin and other temperatures.", c4l: "Open Converter →"
             },
             ar: {
                 dir: "rtl",
                 title: "أدوات التحويل",
                 logo: "أدوات التحويل",
                 heading: "أدوات التحويل المجانية عبر الإنترنت",
-                desc: "قم بتحويل العملات، القياسات، والوحدات بسرعة وسهولة وبدون إعلانات مزعجة."
+                desc: "قم بتحويل العملات، القياسات، والوحدات بسرعة وسهولة.",
+                c1t: "محول العملات", c1d: "قم بتحويل العملات بسرعة باستخدام أسعار الصرف الحية.", c1l: "فتح المحول ←",
+                c2t: "محول الطول", c2d: "تحويل الأمتار، الكيلومترات، الأميال ووحدات الطول الأخرى.", c2l: "فتح المحول ←",
+                c3t: "محول الوزن", c3d: "تحويل الكيلوجرامات، الغرامات، الرطل ووحدات الوزن الأخرى.", c3l: "فتح المحول ←",
+                c4t: "محول درجات الحرارة", c4d: "تحويل مئوية، فهرنهايت، كلفن درجات الحرارة الأخرى.", c4l: "فتح المحول ←"
             },
             fr: {
                 dir: "ltr",
                 title: "Outils de Conversion",
                 logo: "Outils de Conversion",
                 heading: "Outils de Conversion en Ligne Gratuits",
-                desc: "Convertissez des devises, des mesures et des unités rapidement et facilement sans publicités ennuyeuses."
+                desc: "Convertissez des devises, des mesures et des unités rapidement et facilement.",
+                c1t: "Convertisseur de Devises", c1d: "Convertissez des devises rapidement en utilisant les taux de change en direct.", c1l: "Ouvrir le convertisseur →",
+                c2t: "Convertisseur de Longueur", c2d: "Convertissez des mètres, kilomètres, miles et autres unités.", c2l: "Ouvrir le convertisseur →",
+                c3t: "Convertisseur de Poids", c3d: "Convertissez des kilogrammes, grammes, livres et autres unités.", c3l: "Ouvrir le convertisseur →",
+                c4t: "Convertisseur de Température", c4d: "Convertissez Celsius, Fahrenheit, Kelvin et autres températures.", c4l: "Ouvrir le convertisseur →"
             }
         };
 
-        function setLanguage(lang) {
+        function changeLanguage(lang) {
             const t = translations[lang];
             if (!t) return;
 
@@ -102,6 +155,22 @@
             document.getElementById('txt-logo').innerText = t.logo;
             document.getElementById('txt-heading').innerText = t.heading;
             document.getElementById('txt-desc').innerText = t.desc;
+
+            document.getElementById('card1-title').innerText = t.c1t;
+            document.getElementById('card1-desc').innerText = t.c1d;
+            document.getElementById('card1-link').innerText = t.c1l;
+
+            document.getElementById('card2-title').innerText = t.c2t;
+            document.getElementById('card2-desc').innerText = t.c2d;
+            document.getElementById('card2-link').innerText = t.c2l;
+
+            document.getElementById('card3-title').innerText = t.c3t;
+            document.getElementById('card3-desc').innerText = t.c3d;
+            document.getElementById('card3-link').innerText = t.c3l;
+
+            document.getElementById('card4-title').innerText = t.c4t;
+            document.getElementById('card4-desc').innerText = t.c4d;
+            document.getElementById('card4-link').innerText = t.c4l;
         }
     </script>
 
