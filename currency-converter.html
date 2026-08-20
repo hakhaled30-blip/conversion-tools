@@ -1,6 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Currency Converter - Free Online Currency Converter</title>
+
+  <meta name="description" content="Convert currencies online with our free currency converter. Convert USD, EUR, GBP, MAD and other major currencies using updated exchange rates.">
+
+  <meta name="robots" content="index, follow">
+
+  <link rel="canonical" href="https://hakhaled30-blip.github.io/conversion-tools/currency-converter.html">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Currency Converter - Free Online Currency Converter">
+  <meta property="og:description" content="Convert currencies online using updated exchange rates. Free, fast and easy to use.">
+  <meta property="og:url" content="https://hakhaled30-blip.github.io/conversion-tools/currency-converter.html">
+  <meta property="og:site_name" content="Conversion Tools">
 
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-K3YW32Z03B"></script>
@@ -12,18 +28,9 @@
     }
 
     gtag('js', new Date());
+
     gtag('config', 'G-K3YW32Z03B');
   </script>
-  <!-- End Google Analytics -->
-
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Currency Converter - Conversion Tools</title>
-
-  <meta name="description" content="Convert currencies using updated exchange rates with our free online currency converter.">
-
-  <meta name="robots" content="index, follow">
 
   <style>
     * {
@@ -273,7 +280,6 @@
       }
     }
   </style>
-
 </head>
 
 <body>
@@ -294,21 +300,19 @@
   </div>
 </header>
 
-
 <main>
 
   <section class="hero">
 
     <h1 id="pageTitle">
-      Currency Converter
+      Currency Converter Online
     </h1>
 
     <p id="pageDescription">
-      Convert currencies using updated exchange rates.
+      Convert currencies online using updated exchange rates.
     </p>
 
   </section>
-
 
   <section class="converter-card">
 
@@ -325,10 +329,10 @@
         min="0"
         step="any"
         inputmode="decimal"
+        aria-label="Amount"
       >
 
     </div>
-
 
     <div class="unit-row">
 
@@ -338,10 +342,9 @@
           From
         </label>
 
-        <select id="fromCurrency"></select>
+        <select id="fromCurrency" aria-label="From currency"></select>
 
       </div>
-
 
       <button
         type="button"
@@ -353,19 +356,17 @@
         ⇅
       </button>
 
-
       <div class="field">
 
         <label for="toCurrency" id="toLabel">
           To
         </label>
 
-        <select id="toCurrency"></select>
+        <select id="toCurrency" aria-label="To currency"></select>
 
       </div>
 
     </div>
-
 
     <button
       type="button"
@@ -375,8 +376,7 @@
       Convert
     </button>
 
-
-    <div class="result" id="result">
+    <div class="result" id="result" aria-live="polite">
       Loading exchange rates...
     </div>
 
@@ -385,7 +385,6 @@
     </div>
 
   </section>
-
 
   <section class="about">
 
@@ -402,13 +401,12 @@
     </p>
 
     <p id="aboutText3">
-      This tool supports major international currencies and is designed to work smoothly on phones, tablets and computers.
+      This free online currency converter supports major international currencies and is designed to work smoothly on phones, tablets and computers.
     </p>
 
   </section>
 
 </main>
-
 
 <footer>
 
@@ -442,7 +440,6 @@
 
 </footer>
 
-
 <script>
 
 const currencies = {
@@ -468,15 +465,14 @@ const currencies = {
 
 };
 
-
 const translations = {
 
   en: {
 
-    pageTitle: "Currency Converter",
+    pageTitle: "Currency Converter Online",
 
     pageDescription:
-      "Convert currencies using updated exchange rates.",
+      "Convert currencies online using updated exchange rates.",
 
     amount: "Amount",
     from: "From",
@@ -493,7 +489,7 @@ const translations = {
       "Select the currency you want to convert from, choose the target currency, enter an amount and press Convert.",
 
     aboutText3:
-      "This tool supports major international currencies and is designed to work smoothly on phones, tablets and computers.",
+      "This free online currency converter supports major international currencies and is designed to work smoothly on phones, tablets and computers.",
 
     rateInfo:
       "Exchange rates are updated automatically.",
@@ -518,14 +514,13 @@ const translations = {
 
   },
 
-
   fr: {
 
     pageTitle:
-      "Convertisseur de devises",
+      "Convertisseur de devises en ligne",
 
     pageDescription:
-      "Convertissez les devises avec des taux de change mis à jour.",
+      "Convertissez les devises en ligne avec des taux de change mis à jour.",
 
     amount: "Montant",
     from: "De",
@@ -542,7 +537,7 @@ const translations = {
       "Sélectionnez la devise de départ, choisissez la devise cible, saisissez un montant et cliquez sur Convertir.",
 
     aboutText3:
-      "Cet outil prend en charge plusieurs devises internationales et fonctionne sur les téléphones, tablettes et ordinateurs.",
+      "Ce convertisseur de devises gratuit prend en charge plusieurs devises internationales et fonctionne sur les téléphones, tablettes et ordinateurs.",
 
     rateInfo:
       "Les taux de change sont mis à jour automatiquement.",
@@ -567,14 +562,13 @@ const translations = {
 
   },
 
-
   ar: {
 
     pageTitle:
-      "محول العملات",
+      "محول العملات عبر الإنترنت",
 
     pageDescription:
-      "حوّل العملات باستخدام أسعار الصرف المحدثة.",
+      "حوّل العملات عبر الإنترنت باستخدام أسعار الصرف المحدثة.",
 
     amount: "المبلغ",
     from: "من",
@@ -591,7 +585,7 @@ const translations = {
       "اختر العملة التي تريد التحويل منها، ثم اختر العملة المستهدفة، وأدخل المبلغ واضغط على تحويل.",
 
     aboutText3:
-      "يدعم هذا المحول مجموعة من العملات الدولية الرئيسية ويعمل بسلاسة على الهواتف والأجهزة اللوحية وأجهزة الكمبيوتر.",
+      "يدعم هذا المحول المجاني للعملات مجموعة من العملات الدولية الرئيسية ويعمل بسلاسة على الهواتف والأجهزة اللوحية وأجهزة الكمبيوتر.",
 
     rateInfo:
       "يتم تحديث أسعار الصرف تلقائيًا.",
@@ -618,10 +612,8 @@ const translations = {
 
 };
 
-
 let rates = {};
 let currentLanguage = "en";
-
 
 function populateCurrencies() {
 
@@ -646,7 +638,6 @@ function populateCurrencies() {
 
     from.appendChild(option1);
 
-
     const option2 =
       document.createElement("option");
 
@@ -659,12 +650,9 @@ function populateCurrencies() {
 
   });
 
-
   from.value = "USD";
   to.value = "EUR";
-
 }
-
 
 async function loadRates() {
 
@@ -708,7 +696,6 @@ async function loadRates() {
 
 }
 
-
 function convertCurrency() {
 
   const amount =
@@ -734,9 +721,7 @@ function convertCurrency() {
       translations[currentLanguage].invalid;
 
     return;
-
   }
-
 
   if (
     !rates[from] ||
@@ -747,51 +732,41 @@ function convertCurrency() {
       translations[currentLanguage].error;
 
     return;
-
   }
-
 
   const converted =
     amount *
     (rates[to] / rates[from]);
 
-
   const rate =
     rates[to] / rates[from];
 
+  const locale =
+    currentLanguage === "ar"
+      ? "ar"
+      : currentLanguage === "fr"
+        ? "fr-FR"
+        : "en-US";
 
   const formattedResult =
     Number(converted.toFixed(6))
-      .toLocaleString(
-        currentLanguage === "ar"
-          ? "ar"
-          : currentLanguage === "fr"
-            ? "fr-FR"
-            : "en-US"
-      );
-
+      .toLocaleString(locale);
 
   const formattedRate =
     Number(rate.toFixed(8))
-      .toLocaleString(
-        currentLanguage === "ar"
-          ? "ar"
-          : currentLanguage === "fr"
-            ? "fr-FR"
-            : "en-US"
-      );
-
+      .toLocaleString(locale);
 
   result.textContent =
     amount + " " +
     from +
     " = " +
-    formattedResult + " " +
+    formattedResult +
+    " " +
     to;
 
-
   document.getElementById("rateInfo").textContent =
-    "1 " +
+    translations[currentLanguage].rateInfo +
+    " 1 " +
     from +
     " = " +
     formattedRate +
@@ -800,17 +775,12 @@ function convertCurrency() {
 
 }
 
-
 function setLanguage(language) {
 
   currentLanguage = language;
 
   const t =
     translations[language];
-
-  if (!t) {
-    return;
-  }
 
   document.documentElement.lang =
     language;
@@ -820,11 +790,23 @@ function setLanguage(language) {
       ? "rtl"
       : "ltr";
 
-
   document.title =
-    t.pageTitle +
-    " - Conversion Tools";
+    language === "en"
+      ? "Currency Converter - Free Online Currency Converter"
+      : language === "fr"
+        ? "Convertisseur de devises - Conversion Tools"
+        : "محول العملات - Conversion Tools";
 
+  document.querySelector(
+    'meta[name="description"]'
+  ).setAttribute(
+    "content",
+    language === "en"
+      ? "Convert currencies online with our free currency converter. Convert USD, EUR, GBP, MAD and other major currencies using updated exchange rates."
+      : language === "fr"
+        ? "Convertissez les devises en ligne avec notre convertisseur gratuit. Convertissez USD, EUR, GBP, MAD et d'autres devises avec des taux de change mis à jour."
+        : "حوّل العملات عبر الإنترنت باستخدام محول العملات المجاني. حوّل الدولار واليورو والجنيه والدرهم المغربي وغيرها من العملات باستخدام أسعار الصرف المحدثة."
+  );
 
   document.getElementById("pageTitle").textContent =
     t.pageTitle;
@@ -844,7 +826,6 @@ function setLanguage(language) {
   document.getElementById("convertButton").textContent =
     t.convert;
 
-
   document.getElementById("aboutTitle").textContent =
     t.aboutTitle;
 
@@ -856,7 +837,6 @@ function setLanguage(language) {
 
   document.getElementById("aboutText3").textContent =
     t.aboutText3;
-
 
   document.getElementById("homeLink").textContent =
     t.home;
@@ -876,7 +856,6 @@ function setLanguage(language) {
   document.getElementById("copyright").textContent =
     t.copyright;
 
-
   if (
     rates &&
     Object.keys(rates).length > 0
@@ -891,14 +870,12 @@ function setLanguage(language) {
 
   }
 
-
   localStorage.setItem(
     "preferredLanguage",
     language
   );
 
 }
-
 
 document
   .getElementById("convertButton")
@@ -907,14 +884,12 @@ document
     convertCurrency
   );
 
-
 document
   .getElementById("amount")
   .addEventListener(
     "input",
     convertCurrency
   );
-
 
 document
   .getElementById("fromCurrency")
@@ -923,14 +898,12 @@ document
     convertCurrency
   );
 
-
 document
   .getElementById("toCurrency")
   .addEventListener(
     "change",
     convertCurrency
   );
-
 
 document
   .getElementById("swapButton")
@@ -958,7 +931,6 @@ document
     }
   );
 
-
 document
   .getElementById("languageSelect")
   .addEventListener(
@@ -970,24 +942,19 @@ document
     }
   );
 
-
 populateCurrencies();
-
 
 const savedLanguage =
   localStorage.getItem(
     "preferredLanguage"
   ) || "en";
 
-
 document.getElementById(
   "languageSelect"
 ).value =
   savedLanguage;
 
-
 setLanguage(savedLanguage);
-
 
 loadRates();
 
