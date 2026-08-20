@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Currency Converter - Live Exchange Rates</title>
+  <title>Currency Converter - Conversion Tools</title>
 
-  <meta name="description" content="Free online currency converter with updated exchange rates. Convert USD, EUR, GBP, MAD and many other currencies.">
+  <meta name="description" content="Convert currencies using updated exchange rates with our free online currency converter.">
 
   <meta name="robots" content="index, follow">
 
@@ -31,11 +31,12 @@
     }
 
     .header-content {
-      max-width: 1050px;
+      max-width: 900px;
       margin: auto;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 15px;
     }
 
     .logo {
@@ -45,44 +46,45 @@
       font-weight: 700;
     }
 
-    .home-link {
+    .language-select {
+      padding: 9px 12px;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      background: #ffffff;
       color: #374151;
-      text-decoration: none;
-      font-size: 15px;
-    }
-
-    .home-link:hover {
-      color: #2563eb;
+      font-size: 14px;
+      cursor: pointer;
     }
 
     main {
       max-width: 900px;
-      margin: 50px auto;
+      margin: 45px auto;
       padding: 0 20px;
     }
 
-    .intro {
+    .hero {
       text-align: center;
       margin-bottom: 30px;
     }
 
-    .intro h1 {
-      font-size: 40px;
+    .hero h1 {
+      font-size: 38px;
       color: #111827;
       margin-bottom: 12px;
     }
 
-    .intro p {
+    .hero p {
       color: #6b7280;
       font-size: 17px;
+      line-height: 1.6;
     }
 
-    .converter {
+    .converter-card {
       background: #ffffff;
-      padding: 32px;
-      border-radius: 18px;
       border: 1px solid #e5e7eb;
-      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.06);
+      border-radius: 18px;
+      padding: 30px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
     }
 
     .field {
@@ -91,42 +93,45 @@
 
     .field label {
       display: block;
-      margin-bottom: 8px;
       font-weight: 700;
+      margin-bottom: 8px;
       color: #374151;
     }
 
-    .field input,
-    .field select {
+    input,
+    select {
       width: 100%;
-      padding: 14px;
+      padding: 13px 14px;
       border: 1px solid #d1d5db;
-      border-radius: 10px;
-      font-size: 16px;
+      border-radius: 9px;
       background: #ffffff;
+      color: #111827;
+      font-size: 16px;
+      outline: none;
     }
 
-    .field input:focus,
-    .field select:focus {
-      outline: none;
+    input:focus,
+    select:focus {
       border-color: #2563eb;
     }
 
-    .swap-container {
-      display: flex;
-      justify-content: center;
-      margin: -4px 0 18px;
+    .unit-row {
+      display: grid;
+      grid-template-columns: 1fr 55px 1fr;
+      gap: 12px;
+      align-items: end;
     }
 
     .swap-button {
-      width: 46px;
+      width: 55px;
       height: 46px;
-      border-radius: 50%;
       border: 1px solid #d1d5db;
-      background: #ffffff;
+      border-radius: 9px;
+      background: #f9fafb;
       color: #2563eb;
-      font-size: 20px;
+      font-size: 22px;
       cursor: pointer;
+      margin-bottom: 0;
     }
 
     .swap-button:hover {
@@ -135,9 +140,9 @@
 
     .convert-button {
       width: 100%;
-      padding: 15px;
+      padding: 14px;
       border: none;
-      border-radius: 10px;
+      border-radius: 9px;
       background: #2563eb;
       color: #ffffff;
       font-size: 17px;
@@ -150,144 +155,106 @@
       background: #1d4ed8;
     }
 
-    .convert-button:disabled {
-      background: #93c5fd;
-      cursor: not-allowed;
-    }
-
-    .status {
-      text-align: center;
-      margin-top: 18px;
-      font-size: 14px;
-      color: #6b7280;
-      min-height: 20px;
-    }
-
     .result {
-      display: none;
-      margin-top: 25px;
-      padding: 22px;
-      border-radius: 14px;
-      background: #eff6ff;
+      margin-top: 22px;
+      padding: 18px;
+      background: #f0f7ff;
+      border: 1px solid #dbeafe;
+      border-radius: 10px;
       text-align: center;
-    }
-
-    .result-text {
-      font-size: 27px;
+      font-size: 20px;
       font-weight: 700;
-      color: #1d4ed8;
-      word-break: break-word;
+      color: #1e40af;
+      min-height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
-    .rate {
-      margin-top: 10px;
-      color: #4b5563;
-      font-size: 14px;
-    }
-
-    .date {
-      margin-top: 6px;
+    .rate-info {
+      text-align: center;
       color: #6b7280;
       font-size: 13px;
+      margin-top: 12px;
     }
 
-    .error {
-      display: none;
-      margin-top: 18px;
-      padding: 14px;
-      border-radius: 10px;
-      background: #fef2f2;
-      color: #b91c1c;
-      text-align: center;
-      font-size: 14px;
-    }
-
-    .info {
+    .about {
       margin-top: 35px;
       background: #ffffff;
-      padding: 25px;
-      border-radius: 14px;
       border: 1px solid #e5e7eb;
+      border-radius: 16px;
+      padding: 28px;
     }
 
-    .info h2 {
-      margin-bottom: 12px;
+    .about h2 {
       color: #111827;
-      font-size: 20px;
+      margin-bottom: 14px;
     }
 
-    .info h3 {
-      margin-top: 20px;
-      margin-bottom: 8px;
-      color: #111827;
-      font-size: 16px;
-    }
-
-    .info p {
+    .about p {
       color: #6b7280;
+      line-height: 1.8;
       margin-bottom: 10px;
-      line-height: 1.7;
-    }
-
-    .info ul {
-      margin-top: 8px;
-      padding-left: 20px;
-      color: #6b7280;
-      line-height: 1.6;
-    }
-
-    .info li {
-      margin-bottom: 6px;
-    }
-
-    .source-note {
-      font-size: 13px;
-      color: #9ca3af;
-      margin-top: 15px;
     }
 
     footer {
-      margin-top: 60px;
+      margin-top: 55px;
       background: #111827;
       color: #d1d5db;
       text-align: center;
       padding: 30px 20px;
     }
 
-    footer a {
+    .footer-links {
+      margin-bottom: 15px;
+    }
+
+    .footer-links a {
       color: #ffffff;
       text-decoration: none;
       margin: 0 8px;
-    }
-
-    footer p {
-      margin-top: 12px;
       font-size: 14px;
     }
 
-    @media (max-width: 600px) {
-      main {
-        margin: 35px auto;
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    footer p {
+      font-size: 14px;
+    }
+
+    html[dir="rtl"] body {
+      text-align: right;
+    }
+
+    html[dir="rtl"] .hero,
+    html[dir="rtl"] .result {
+      text-align: center;
+    }
+
+    @media (max-width: 650px) {
+
+      .header-content {
+        flex-direction: column;
       }
 
-      .intro h1 {
-        font-size: 31px;
+      .hero h1 {
+        font-size: 30px;
       }
 
-      .converter {
+      .converter-card {
         padding: 22px;
       }
 
-      .result-text {
-        font-size: 22px;
+      .unit-row {
+        grid-template-columns: 1fr;
+        gap: 15px;
       }
 
-      .header-content {
-        gap: 10px;
-      }
-
-      .logo {
-        font-size: 20px;
+      .swap-button {
+        width: 100%;
+        height: 44px;
       }
     }
   </style>
@@ -295,363 +262,710 @@
 
 <body>
 
-  <header>
-    <div class="header-content">
-      <a href="index.html" class="logo">Conversion Tools</a>
+<header>
+  <div class="header-content">
 
-      <a href="index.html" class="home-link">
-        ← Home
-      </a>
+    <a href="index.html" class="logo">
+      Conversion Tools
+    </a>
+
+    <select id="languageSelect" class="language-select" aria-label="Language">
+      <option value="en">🇬🇧 English</option>
+      <option value="fr">🇫🇷 Français</option>
+      <option value="ar">🇸🇦 العربية</option>
+    </select>
+
+  </div>
+</header>
+
+
+<main>
+
+  <section class="hero">
+    <h1 id="pageTitle">Currency Converter</h1>
+
+    <p id="pageDescription">
+      Convert currencies using updated exchange rates.
+    </p>
+  </section>
+
+
+  <section class="converter-card">
+
+    <div class="field">
+
+      <label for="amount" id="amountLabel">
+        Amount
+      </label>
+
+      <input
+        type="number"
+        id="amount"
+        value="100"
+        min="0"
+        step="any"
+        inputmode="decimal"
+      >
+
     </div>
-  </header>
 
-  <main>
 
-    <section class="intro">
-      <h1>Currency Converter</h1>
-
-      <p>
-        Convert currencies using updated exchange rates.
-      </p>
-    </section>
-
-    <section class="converter">
+    <div class="unit-row">
 
       <div class="field">
-        <label for="amount">Amount</label>
 
-        <input
-          type="number"
-          id="amount"
-          value="100"
-          min="0"
-          step="any"
-          placeholder="Enter amount"
-        >
+        <label for="fromCurrency" id="fromLabel">
+          From
+        </label>
+
+        <select id="fromCurrency"></select>
+
       </div>
 
-      <div class="field">
-        <label for="fromCurrency">From</label>
-
-        <select id="fromCurrency">
-
-          <option value="USD">USD - US Dollar</option>
-          <option value="EUR">EUR - Euro</option>
-          <option value="GBP">GBP - British Pound</option>
-          <option value="MAD">MAD - Moroccan Dirham</option>
-          <option value="CAD">CAD - Canadian Dollar</option>
-          <option value="AUD">AUD - Australian Dollar</option>
-          <option value="JPY">JPY - Japanese Yen</option>
-          <option value="CHF">CHF - Swiss Franc</option>
-          <option value="CNY">CNY - Chinese Yuan</option>
-          <option value="INR">INR - Indian Rupee</option>
-          <option value="BRL">BRL - Brazilian Real</option>
-          <option value="MXN">MXN - Mexican Peso</option>
-          <option value="ZAR">ZAR - South African Rand</option>
-          <option value="SEK">SEK - Swedish Krona</option>
-          <option value="NOK">NOK - Norwegian Krone</option>
-          <option value="DKK">DKK - Danish Krone</option>
-          <option value="PLN">PLN - Polish Zloty</option>
-          <option value="TRY">TRY - Turkish Lira</option>
-        </select>
-      </div>
-
-      <div class="swap-container">
-        <button
-          type="button"
-          class="swap-button"
-          onclick="swapCurrencies()"
-          title="Swap currencies"
-        >
-          ⇅
-        </button>
-      </div>
-
-      <div class="field">
-        <label for="toCurrency">To</label>
-
-        <select id="toCurrency">
-
-          <option value="EUR">EUR - Euro</option>
-          <option value="USD">USD - US Dollar</option>
-          <option value="GBP">GBP - British Pound</option>
-          <option value="MAD">MAD - Moroccan Dirham</option>
-          <option value="CAD">CAD - Canadian Dollar</option>
-          <option value="AUD">AUD - Australian Dollar</option>
-          <option value="JPY">JPY - Japanese Yen</option>
-          <option value="CHF">CHF - Swiss Franc</option>
-          <option value="CNY">CNY - Chinese Yuan</option>
-          <option value="INR">INR - Indian Rupee</option>
-          <option value="BRL">BRL - Brazilian Real</option>
-          <option value="MXN">MXN - Mexican Peso</option>
-          <option value="ZAR">ZAR - South African Rand</option>
-          <option value="SEK">SEK - Swedish Krona</option>
-          <option value="NOK">NOK - Norwegian Krone</option>
-          <option value="DKK">DKK - Danish Krone</option>
-          <option value="PLN">PLN - Polish Zloty</option>
-          <option value="TRY">TRY - Turkish Lira</option>
-        </select>
-      </div>
 
       <button
         type="button"
-        class="convert-button"
-        id="convertButton"
-        onclick="convertCurrency()"
+        class="swap-button"
+        id="swapButton"
+        aria-label="Swap currencies"
+        title="Swap currencies"
       >
-        Convert
+        ⇅
       </button>
 
-      <div class="status" id="status"></div>
 
-      <div class="error" id="error"></div>
+      <div class="field">
 
-      <div class="result" id="result">
+        <label for="toCurrency" id="toLabel">
+          To
+        </label>
 
-        <div class="result-text" id="resultText"></div>
-
-        <div class="rate" id="rateText"></div>
-
-        <div class="date" id="dateText"></div>
+        <select id="toCurrency"></select>
 
       </div>
 
-    </section>
+    </div>
 
-    <!-- قسم الشرح والأسئلة الشائعة الجديد والمحسن للـ SEO -->
-    <section class="info">
 
-      <h2>About Currency Conversion</h2>
+    <button
+      type="button"
+      class="convert-button"
+      id="convertButton"
+    >
+      Convert
+    </button>
 
-      <p>
-        Currency conversion lets you calculate the value of one currency
-        in another currency using an exchange rate. Enter an amount, select the currencies and click Convert.
-      </p>
 
-      <h3>Frequently Asked Questions</h3>
-      <ul>
-        <li><strong>Are the exchange rates updated?</strong> Yes, rates are fetched dynamically from reliable financial data sources.</li>
-        <li><strong>Is this tool free?</strong> Absolutely, all our conversion calculators are 100% free to use with no hidden fees.</li>
-        <li><strong>Can I convert local currencies like MAD?</strong> Yes, the tool supports multiple global and regional currencies including USD, EUR, GBP, and Moroccan Dirham.</li>
-      </ul>
+    <div class="result" id="result">
+      Loading exchange rates...
+    </div>
 
-      <p class="source-note">
-        Exchange-rate data is provided by Frankfurter.
-      </p>
+    <div class="rate-info" id="rateInfo">
+      Exchange rates are updated automatically.
+    </div>
 
-    </section>
+  </section>
 
-  </main>
 
-  <footer>
+  <section class="about">
 
-    <a href="index.html">Home</a>
+    <h2 id="aboutTitle">
+      About Currency Conversion
+    </h2>
 
-    <a href="currency-converter.html">
-      Currency Converter
-    </a>
-
-    <p>
-      © 2026 Conversion Tools. All rights reserved.
+    <p id="aboutText1">
+      Currency conversion allows you to convert an amount from one currency to another using current exchange rates.
     </p>
 
-  </footer>
+    <p id="aboutText2">
+      Select the currency you want to convert from, choose the target currency, enter an amount and press Convert.
+    </p>
 
-  <script>
+    <p id="aboutText3">
+      This tool supports major international currencies and is designed to work smoothly on phones, tablets and computers.
+    </p>
 
-    const API_URL = "https://api.frankfurter.dev/v2";
+  </section>
 
-    async function convertCurrency() {
-
-      const amountInput = document.getElementById("amount");
-      const fromCurrency = document.getElementById("fromCurrency").value;
-      const toCurrency = document.getElementById("toCurrency").value;
-
-      const amount = Number(amountInput.value);
-
-      const button = document.getElementById("convertButton");
-      const status = document.getElementById("status");
-      const result = document.getElementById("result");
-      const resultText = document.getElementById("resultText");
-      const rateText = document.getElementById("rateText");
-      const dateText = document.getElementById("dateText");
-      const error = document.getElementById("error");
-
-      error.style.display = "none";
-      result.style.display = "none";
-
-      if (!Number.isFinite(amount) || amount < 0) {
-
-        error.textContent = "Please enter a valid amount.";
-
-        error.style.display = "block";
-
-        return;
-      }
-
-      if (fromCurrency === toCurrency) {
-
-        resultText.textContent =
-          formatNumber(amount) +
-          " " +
-          fromCurrency +
-          " = " +
-          formatNumber(amount) +
-          " " +
-          toCurrency;
-
-        rateText.textContent =
-          "1 " +
-          fromCurrency +
-          " = 1 " +
-          toCurrency;
-
-        dateText.textContent =
-          "Same currency";
-
-        result.style.display = "block";
-
-        return;
-      }
-
-      button.disabled = true;
-
-      status.textContent = "Loading latest available exchange rate...";
-
-      try {
-
-        const response = await fetch(
-          API_URL +
-          "/rate/" +
-          encodeURIComponent(fromCurrency) +
-          "/" +
-          encodeURIComponent(toCurrency)
-        );
-
-        if (!response.ok) {
-          throw new Error("Unable to retrieve exchange rate.");
-        }
-
-        const data = await response.json();
-
-        if (!data.rate) {
-          throw new Error("Exchange rate is unavailable.");
-        }
-
-        const rate = Number(data.rate);
-
-        const convertedAmount = amount * rate;
-
-        resultText.textContent =
-          formatNumber(amount) +
-          " " +
-          fromCurrency +
-          " = " +
-          formatNumber(convertedAmount) +
-          " " +
-          toCurrency;
-
-        rateText.textContent =
-          "1 " +
-          fromCurrency +
-          " = " +
-          formatRate(rate) +
-          " " +
-          toCurrency;
-
-        if (data.date) {
-
-          dateText.textContent =
-            "Rate date: " +
-            formatDate(data.date);
-
-        } else {
-
-          dateText.textContent = "";
-
-        }
-
-        result.style.display = "block";
-
-        status.textContent = "";
-
-      } catch (err) {
-
-        status.textContent = "";
-
-        error.textContent =
-          "Unable to load the exchange rate. Please check your internet connection and try again.";
-
-        error.style.display = "block";
-
-        console.error(err);
-
-      } finally {
-
-        button.disabled = false;
-
-      }
-    }
+</main>
 
 
-    function swapCurrencies() {
+<footer>
 
-      const from = document.getElementById("fromCurrency");
-      const to = document.getElementById("toCurrency");
+  <div class="footer-links">
 
-      const temporaryValue = from.value;
+    <a href="index.html" id="homeLink">
+      Home
+    </a>
 
-      from.value = to.value;
+    <a href="about.html" id="aboutLink">
+      About Us
+    </a>
 
-      to.value = temporaryValue;
+    <a href="contact.html" id="contactLink">
+      Contact
+    </a>
 
-      const result = document.getElementById("result");
+    <a href="privacy-policy.html" id="privacyLink">
+      Privacy Policy
+    </a>
 
-      result.style.display = "none";
+    <a href="terms.html" id="termsLink">
+      Terms
+    </a>
 
-      document.getElementById("error").style.display = "none";
+  </div>
 
-      document.getElementById("status").textContent = "";
-    }
+  <p id="copyright">
+    © 2026 Conversion Tools. All rights reserved.
+  </p>
+
+</footer>
 
 
-    function formatNumber(number) {
+<script>
 
-      return Number(number).toLocaleString(
-        undefined,
-        {
-          maximumFractionDigits: 6
-        }
+const currencies = {
+
+  USD: "US Dollar",
+  EUR: "Euro",
+  GBP: "British Pound",
+  MAD: "Moroccan Dirham",
+  CAD: "Canadian Dollar",
+  AUD: "Australian Dollar",
+  JPY: "Japanese Yen",
+  CHF: "Swiss Franc",
+  CNY: "Chinese Yuan",
+  INR: "Indian Rupee",
+  BRL: "Brazilian Real",
+  MXN: "Mexican Peso",
+  ZAR: "South African Rand",
+  SEK: "Swedish Krona",
+  NOK: "Norwegian Krone",
+  DKK: "Danish Krone",
+  PLN: "Polish Zloty",
+  TRY: "Turkish Lira"
+
+};
+
+
+const translations = {
+
+  en: {
+
+    pageTitle: "Currency Converter",
+
+    pageDescription:
+      "Convert currencies using updated exchange rates.",
+
+    amount: "Amount",
+    from: "From",
+    to: "To",
+    convert: "Convert",
+
+    aboutTitle:
+      "About Currency Conversion",
+
+    aboutText1:
+      "Currency conversion allows you to convert an amount from one currency to another using current exchange rates.",
+
+    aboutText2:
+      "Select the currency you want to convert from, choose the target currency, enter an amount and press Convert.",
+
+    aboutText3:
+      "This tool supports major international currencies and is designed to work smoothly on phones, tablets and computers.",
+
+    rateInfo:
+      "Exchange rates are updated automatically.",
+
+    loading:
+      "Loading exchange rates...",
+
+    error:
+      "Unable to load exchange rates. Please try again later.",
+
+    invalid:
+      "Please enter a valid amount.",
+
+    home: "Home",
+    about: "About Us",
+    contact: "Contact",
+    privacy: "Privacy Policy",
+    terms: "Terms",
+
+    copyright:
+      "© 2026 Conversion Tools. All rights reserved."
+
+  },
+
+
+  fr: {
+
+    pageTitle:
+      "Convertisseur de devises",
+
+    pageDescription:
+      "Convertissez les devises avec des taux de change mis à jour.",
+
+    amount: "Montant",
+    from: "De",
+    to: "Vers",
+    convert: "Convertir",
+
+    aboutTitle:
+      "À propos de la conversion des devises",
+
+    aboutText1:
+      "La conversion des devises permet de convertir un montant d'une devise vers une autre à l'aide des taux de change actuels.",
+
+    aboutText2:
+      "Sélectionnez la devise de départ, choisissez la devise cible, saisissez un montant et cliquez sur Convertir.",
+
+    aboutText3:
+      "Cet outil prend en charge plusieurs devises internationales et fonctionne sur les téléphones, tablettes et ordinateurs.",
+
+    rateInfo:
+      "Les taux de change sont mis à jour automatiquement.",
+
+    loading:
+      "Chargement des taux de change...",
+
+    error:
+      "Impossible de charger les taux de change. Veuillez réessayer plus tard.",
+
+    invalid:
+      "Veuillez saisir un montant valide.",
+
+    home: "Accueil",
+    about: "À propos",
+    contact: "Contact",
+    privacy: "Politique de confidentialité",
+    terms: "Conditions",
+
+    copyright:
+      "© 2026 Conversion Tools. Tous droits réservés."
+
+  },
+
+
+  ar: {
+
+    pageTitle:
+      "محول العملات",
+
+    pageDescription:
+      "حوّل العملات باستخدام أسعار الصرف المحدثة.",
+
+    amount: "المبلغ",
+    from: "من",
+    to: "إلى",
+    convert: "تحويل",
+
+    aboutTitle:
+      "حول تحويل العملات",
+
+    aboutText1:
+      "يتيح لك تحويل العملات تحويل مبلغ من عملة إلى أخرى باستخدام أسعار الصرف الحالية.",
+
+    aboutText2:
+      "اختر العملة التي تريد التحويل منها، ثم اختر العملة المستهدفة، وأدخل المبلغ واضغط على تحويل.",
+
+    aboutText3:
+      "يدعم هذا المحول مجموعة من العملات الدولية الرئيسية ويعمل بسلاسة على الهواتف والأجهزة اللوحية وأجهزة الكمبيوتر.",
+
+    rateInfo:
+      "يتم تحديث أسعار الصرف تلقائيًا.",
+
+    loading:
+      "جارٍ تحميل أسعار الصرف...",
+
+    error:
+      "تعذر تحميل أسعار الصرف. يرجى المحاولة مرة أخرى لاحقًا.",
+
+    invalid:
+      "يرجى إدخال مبلغ صحيح.",
+
+    home: "الرئيسية",
+    about: "من نحن",
+    contact: "اتصل بنا",
+    privacy: "سياسة الخصوصية",
+    terms: "الشروط",
+
+    copyright:
+      "© 2026 Conversion Tools. جميع الحقوق محفوظة."
+
+  }
+
+};
+
+
+let rates = {};
+let currentLanguage = "en";
+
+
+function populateCurrencies() {
+
+  const from =
+    document.getElementById("fromCurrency");
+
+  const to =
+    document.getElementById("toCurrency");
+
+  from.innerHTML = "";
+  to.innerHTML = "";
+
+  Object.keys(currencies).forEach(function(code) {
+
+    const option1 =
+      document.createElement("option");
+
+    option1.value = code;
+
+    option1.textContent =
+      code + " - " + currencies[code];
+
+    from.appendChild(option1);
+
+
+    const option2 =
+      document.createElement("option");
+
+    option2.value = code;
+
+    option2.textContent =
+      code + " - " + currencies[code];
+
+    to.appendChild(option2);
+
+  });
+
+
+  from.value = "USD";
+  to.value = "EUR";
+}
+
+
+async function loadRates() {
+
+  const result =
+    document.getElementById("result");
+
+  result.textContent =
+    translations[currentLanguage].loading;
+
+  try {
+
+    const response =
+      await fetch(
+        "https://open.er-api.com/v6/latest/USD"
       );
+
+    if (!response.ok) {
+      throw new Error("Network error");
     }
 
+    const data =
+      await response.json();
 
-    function formatRate(number) {
+    if (
+      data.result !== "success" ||
+      !data.rates
+    ) {
+      throw new Error("Invalid response");
+    }
 
-      return Number(number).toLocaleString(
-        undefined,
-        {
-          maximumFractionDigits: 8
-        }
+    rates = data.rates;
+
+    convertCurrency();
+
+  } catch (error) {
+
+    result.textContent =
+      translations[currentLanguage].error;
+
+  }
+
+}
+
+
+function convertCurrency() {
+
+  const amount =
+    parseFloat(
+      document.getElementById("amount").value
+    );
+
+  const from =
+    document.getElementById("fromCurrency").value;
+
+  const to =
+    document.getElementById("toCurrency").value;
+
+  const result =
+    document.getElementById("result");
+
+  if (
+    isNaN(amount) ||
+    amount < 0
+  ) {
+
+    result.textContent =
+      translations[currentLanguage].invalid;
+
+    return;
+  }
+
+
+  if (
+    !rates[from] ||
+    !rates[to]
+  ) {
+
+    result.textContent =
+      translations[currentLanguage].error;
+
+    return;
+  }
+
+
+  const converted =
+    amount *
+    (rates[to] / rates[from]);
+
+
+  const rate =
+    rates[to] / rates[from];
+
+
+  const formattedResult =
+    Number(converted.toFixed(6))
+      .toLocaleString(
+        currentLanguage === "ar"
+          ? "ar"
+          : currentLanguage === "fr"
+            ? "fr-FR"
+            : "en-US"
       );
-    }
 
 
-    function formatDate(dateString) {
-
-      const date = new Date(dateString + "T00:00:00");
-
-      return date.toLocaleDateString(
-        undefined,
-        {
-          year: "numeric",
-          month: "long",
-          day: "numeric"
-        }
+  const formattedRate =
+    Number(rate.toFixed(8))
+      .toLocaleString(
+        currentLanguage === "ar"
+          ? "ar"
+          : currentLanguage === "fr"
+            ? "fr-FR"
+            : "en-US"
       );
-    }
 
-  </script>
+
+  result.textContent =
+    amount + " " +
+    from +
+    " = " +
+    formattedResult +
+    " " +
+    to;
+
+
+  document.getElementById("rateInfo").textContent =
+    "1 " +
+    from +
+    " = " +
+    formattedRate +
+    " " +
+    to;
+
+}
+
+
+function setLanguage(language) {
+
+  currentLanguage = language;
+
+  const t =
+    translations[language];
+
+  document.documentElement.lang =
+    language;
+
+  document.documentElement.dir =
+    language === "ar"
+      ? "rtl"
+      : "ltr";
+
+
+  document.title =
+    t.pageTitle +
+    " - Conversion Tools";
+
+
+  document.getElementById("pageTitle").textContent =
+    t.pageTitle;
+
+  document.getElementById("pageDescription").textContent =
+    t.pageDescription;
+
+  document.getElementById("amountLabel").textContent =
+    t.amount;
+
+  document.getElementById("fromLabel").textContent =
+    t.from;
+
+  document.getElementById("toLabel").textContent =
+    t.to;
+
+  document.getElementById("convertButton").textContent =
+    t.convert;
+
+
+  document.getElementById("aboutTitle").textContent =
+    t.aboutTitle;
+
+  document.getElementById("aboutText1").textContent =
+    t.aboutText1;
+
+  document.getElementById("aboutText2").textContent =
+    t.aboutText2;
+
+  document.getElementById("aboutText3").textContent =
+    t.aboutText3;
+
+
+  document.getElementById("homeLink").textContent =
+    t.home;
+
+  document.getElementById("aboutLink").textContent =
+    t.about;
+
+  document.getElementById("contactLink").textContent =
+    t.contact;
+
+  document.getElementById("privacyLink").textContent =
+    t.privacy;
+
+  document.getElementById("termsLink").textContent =
+    t.terms;
+
+  document.getElementById("copyright").textContent =
+    t.copyright;
+
+
+  if (
+    rates &&
+    Object.keys(rates).length > 0
+  ) {
+
+    convertCurrency();
+
+  } else {
+
+    document.getElementById("result").textContent =
+      t.loading;
+
+  }
+
+
+  localStorage.setItem(
+    "preferredLanguage",
+    language
+  );
+
+}
+
+
+document
+  .getElementById("convertButton")
+  .addEventListener(
+    "click",
+    convertCurrency
+  );
+
+
+document
+  .getElementById("amount")
+  .addEventListener(
+    "input",
+    convertCurrency
+  );
+
+
+document
+  .getElementById("fromCurrency")
+  .addEventListener(
+    "change",
+    convertCurrency
+  );
+
+
+document
+  .getElementById("toCurrency")
+  .addEventListener(
+    "change",
+    convertCurrency
+  );
+
+
+document
+  .getElementById("swapButton")
+  .addEventListener(
+    "click",
+    function() {
+
+      const from =
+        document.getElementById("fromCurrency");
+
+      const to =
+        document.getElementById("toCurrency");
+
+      const temporary =
+        from.value;
+
+      from.value =
+        to.value;
+
+      to.value =
+        temporary;
+
+      convertCurrency();
+
+    }
+  );
+
+
+document
+  .getElementById("languageSelect")
+  .addEventListener(
+    "change",
+    function() {
+
+      setLanguage(this.value);
+
+    }
+  );
+
+
+populateCurrencies();
+
+
+const savedLanguage =
+  localStorage.getItem(
+    "preferredLanguage"
+  ) || "en";
+
+
+document.getElementById(
+  "languageSelect"
+).value =
+  savedLanguage;
+
+
+setLanguage(savedLanguage);
+
+
+loadRates();
+
+</script>
 
 </body>
 </html>
