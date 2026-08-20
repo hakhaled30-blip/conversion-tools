@@ -1,326 +1,769 @@
 <!DOCTYPE html>
-<html lang="en" id="html-root" dir="ltr">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="page-title">Conversion Tools</title>
-    <style>
-        /* تنسيقاتك الأصلية للموقع مع إضافة تنسيق قائمة اللغات */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f7f6;
-            color: #333;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: white;
-            padding: 15px 30px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
-        .logo {
-            font-weight: bold;
-            font-size: 18px;
-            color: #2c3e50;
-            text-decoration: none;
-        }
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-        .nav-links a {
-            color: #333;
-            text-decoration: none;
-            font-size: 14px;
-        }
-        .nav-links a:hover {
-            color: #3498db;
-        }
-        .lang-select {
-            padding: 5px 10px;
-            border-radius: 4px;
-            border: 1px solid #ccc;
-            background-color: white;
-            font-size: 14px;
-            cursor: pointer;
-        }
-        .container {
-            max-width: 1100px;
-            margin: 30px auto;
-            padding: 0 20px;
-            text-align: center;
-        }
-        h1 { color: #2c3e50; margin-bottom: 10px; }
-        .desc { color: #555; margin-bottom: 20px; }
-        .search-box {
-            width: 100%;
-            max-width: 600px;
-            padding: 12px 20px;
-            font-size: 15px;
-            border: 1px solid #ddd;
-            border-radius: 6px;
-            margin-bottom: 40px;
-            outline: none;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
-        }
-        .section-title {
-            color: #2c3e50;
-            margin-bottom: 25px;
-            font-size: 22px;
-        }
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 20px;
-            text-align: start;
-            margin-bottom: 50px;
-        }
-        .card {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-        }
-        .card h3 { color: #2c3e50; margin-top: 0; }
-        .card p { color: #666; font-size: 14px; line-height: 1.5; }
-        .card a {
-            color: #3498db;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 14px;
-            display: inline-block;
-            margin-top: 10px;
-        }
-        .about-section, .why-section {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-            text-align: start;
-            margin-bottom: 30px;
-        }
-        .about-section h2, .why-section h2 { color: #2c3e50; margin-top: 0; }
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin-top: 20px;
-            text-align: center;
-        }
-        .feature-box {
-            background: #f9fbfb;
-            padding: 15px;
-            border-radius: 8px;
-        }
-        .why-section ul {
-            padding-left: 20px;
-            color: #555;
-            line-height: 1.8;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Conversion Tools - Free Online Converters</title>
+
+  <meta name="description" content="Free online conversion tools for currency, length, weight, temperature, area, volume, speed and time.">
+
+  <meta name="robots" content="index, follow">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f5f7fb;
+      color: #1f2937;
+      min-height: 100vh;
+    }
+
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid #e5e7eb;
+      padding: 18px 20px;
+    }
+
+    .header-content {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .logo {
+      color: #2563eb;
+      text-decoration: none;
+      font-size: 23px;
+      font-weight: 700;
+    }
+
+    .language-select {
+      padding: 9px 12px;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      background: #ffffff;
+      color: #374151;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 45px auto;
+      padding: 0 20px;
+    }
+
+    .hero {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .hero h1 {
+      font-size: 42px;
+      color: #111827;
+      margin-bottom: 14px;
+    }
+
+    .hero p {
+      color: #6b7280;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .tool-card {
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 16px;
+      padding: 25px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .tool-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    .tool-icon {
+      font-size: 30px;
+      margin-bottom: 12px;
+    }
+
+    .tool-card h2 {
+      font-size: 22px;
+      color: #111827;
+      margin-bottom: 9px;
+    }
+
+    .tool-card p {
+      color: #6b7280;
+      line-height: 1.6;
+      margin-bottom: 18px;
+    }
+
+    .tool-link {
+      display: inline-block;
+      padding: 11px 17px;
+      border-radius: 8px;
+      background: #2563eb;
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .tool-link:hover {
+      background: #1d4ed8;
+    }
+
+    .about {
+      margin-top: 45px;
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 16px;
+      padding: 30px;
+    }
+
+    .about h2 {
+      color: #111827;
+      margin-bottom: 15px;
+    }
+
+    .about p {
+      color: #6b7280;
+      line-height: 1.8;
+      margin-bottom: 12px;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 25px;
+    }
+
+    .feature {
+      text-align: center;
+      padding: 20px;
+      background: #f9fafb;
+      border-radius: 12px;
+    }
+
+    .feature-icon {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .feature h3 {
+      margin-bottom: 8px;
+      color: #111827;
+    }
+
+    .feature p {
+      font-size: 14px;
+      margin-bottom: 0;
+    }
+
+    footer {
+      margin-top: 60px;
+      background: #111827;
+      color: #d1d5db;
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    .footer-links {
+      margin-bottom: 15px;
+    }
+
+    .footer-links a {
+      color: #ffffff;
+      text-decoration: none;
+      margin: 0 8px;
+      font-size: 14px;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    footer p {
+      font-size: 14px;
+    }
+
+    html[dir="rtl"] body {
+      text-align: right;
+    }
+
+    html[dir="rtl"] .hero,
+    html[dir="rtl"] .feature {
+      text-align: center;
+    }
+
+    html[dir="rtl"] .tool-link {
+      text-align: center;
+    }
+
+    @media (max-width: 700px) {
+      .header-content {
+        flex-direction: column;
+      }
+
+      .hero h1 {
+        font-size: 32px;
+      }
+
+      .tools-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .features {
+        grid-template-columns: 1fr;
+      }
+
+      main {
+        margin: 30px auto;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-    <header>
-        <a href="#" class="logo" id="txt-logo">Conversion Tools</a>
-        <div class="nav-links">
-            <a href="about.html" id="txt-about">About</a>
-            <a href="contact.html" id="txt-contact">Contact</a>
-            <!-- قائمة منسدلة اختيار اللغات -->
-            <select id="language-select" class="lang-select" onchange="changeLanguage(this.value)">
-                <option value="en">English</option>
-                <option value="ar">العربية</option>
-                <option value="fr">Français</option>
-            </select>
-        </div>
-    </header>
+<header>
+  <div class="header-content">
 
-    <div class="container">
-        <h1 id="txt-heading">Free Online Conversion Tools</h1>
-        <p class="desc" id="txt-desc">Convert currencies, measurements and units quickly and easily. Use our free online conversion calculators for everyday calculations.</p>
-        
-        <input type="text" class="search-box" id="search-placeholder" placeholder="Search for a conversion tool...">
+    <a href="index.html" class="logo">
+      Conversion Tools
+    </a>
 
-        <h2 class="section-title" id="txt-popular">Popular Conversion Tools</h2>
+    <select id="languageSelect" class="language-select" aria-label="Language">
+      <option value="en">🇬🇧 English</option>
+      <option value="fr">🇫🇷 Français</option>
+      <option value="ar">🇸🇦 العربية</option>
+    </select>
 
-        <div class="grid">
-            <div class="card">
-                <h3 id="c1-title">Currency Converter</h3>
-                <p id="c1-desc">Convert currencies quickly using exchange rates.</p>
-                <a href="#" id="c1-link">Open Converter →</a>
-            </div>
-            <div class="card">
-                <h3 id="c2-title">Length Converter</h3>
-                <p id="c2-desc">Convert meters, kilometers, miles and other length units.</p>
-                <a href="#" id="c2-link">Open Converter →</a>
-            </div>
-            <div class="card">
-                <h3 id="c3-title">Weight Converter</h3>
-                <p id="c3-desc">Convert kilograms, grams, pounds and other weight units.</p>
-                <a href="#" id="c3-link">Open Converter →</a>
-            </div>
-            <div class="card">
-                <h3 id="c4-title">Temperature Converter</h3>
-                <p id="c4-desc">Convert Celsius, Fahrenheit, Kelvin and other temperatures.</p>
-                <a href="#" id="c4-link">Open Converter →</a>
-            </div>
-            <div class="card">
-                <h3 id="c5-title">Area Converter</h3>
-                <p id="c5-desc">Convert square meters, acres, hectares and more.</p>
-                <a href="#" id="c5-link">Open Converter →</a>
-            </div>
-            <div class="card">
-                <h3 id="c6-title">Volume Converter</h3>
-                <p id="c6-desc">Convert liters, milliliters, gallons and other volume units.</p>
-                <a href="#" id="c6-link">Open Converter →</a>
-            </div>
-            <div class="card">
-                <h3 id="c7-title">Speed Converter</h3>
-                <p id="c7-desc">Convert km/h, mph, m/s, knots and other speed units.</p>
-                <a href="#" id="c7-link">Open Converter →</a>
-            </div>
-            <div class="card">
-                <h3 id="c8-title">Time Converter</h3>
-                <p id="c8-desc">Convert seconds, minutes, hours, days, weeks and years.</p>
-                <a href="#" id="c8-link">Open Converter →</a>
-            </div>
-        </div>
+  </div>
+</header>
 
-        <div class="about-section">
-            <h2 id="about-title">About Conversion Tools</h2>
-            <p id="about-desc">Conversion Tools Is a free online platform designed to make everyday unit and measurement conversions simple, fast and accessible.</p>
-            <div class="features-grid">
-                <div class="feature-box">
-                    <strong id="f1-title">Fast</strong>
-                    <p id="f1-desc" style="font-size: 13px; color: #666;">Get conversion results quickly without complicated steps.</p>
-                </div>
-                <div class="feature-box">
-                    <strong id="f2-title">Mobile Friendly</strong>
-                    <p id="f2-desc" style="font-size: 13px; color: #666;">Designed to work smoothly on smartphones, tablets and computers.</p>
-                </div>
-                <div class="feature-box">
-                    <strong id="f3-title">Free to Use</strong>
-                    <p id="f3-desc" style="font-size: 13px; color: #666;">Our online conversion tools are available to use for free.</p>
-                </div>
-            </div>
-        </div>
+<main>
 
-        <div class="why-section">
-            <h2 id="why-title">Why Use Our Conversion Tools?</h2>
-            <p id="why-desc">Online unit conversion is useful for everyday tasks, education, travel, business, shopping and many other situations.</p>
-            <ul>
-                <li id="w1">Convert common units quickly and easily.</li>
-                <li id="w2">Use the tools on smartphones, tablets and desktop computers.</li>
-                <li id="w3">Choose from multiple measurement categories.</li>
-                <li id="w4">Access the converters online without installing software.</li>
-            </ul>
-        </div>
+  <section class="hero">
+    <h1 id="mainTitle">Free Online Conversion Tools</h1>
+
+    <p id="mainDescription">
+      Convert currencies, length, weight, temperature, area, volume, speed and time quickly and easily.
+    </p>
+  </section>
+
+
+  <section class="tools-grid">
+
+    <article class="tool-card">
+      <div class="tool-icon">💱</div>
+      <h2 id="currencyTitle">Currency Converter</h2>
+      <p id="currencyDescription">
+        Convert currencies using updated exchange rates.
+      </p>
+      <a href="currency-converter.html" class="tool-link" id="currencyLink">
+        Open Converter →
+      </a>
+    </article>
+
+
+    <article class="tool-card">
+      <div class="tool-icon">📏</div>
+      <h2 id="lengthTitle">Length Converter</h2>
+      <p id="lengthDescription">
+        Convert meters, kilometers, miles, feet, inches and other length units.
+      </p>
+      <a href="length-converter.html" class="tool-link" id="lengthLink">
+        Open Converter →
+      </a>
+    </article>
+
+
+    <article class="tool-card">
+      <div class="tool-icon">⚖️</div>
+      <h2 id="weightTitle">Weight Converter</h2>
+      <p id="weightDescription">
+        Convert kilograms, grams, pounds, ounces and other weight units.
+      </p>
+      <a href="weight-converter.html" class="tool-link" id="weightLink">
+        Open Converter →
+      </a>
+    </article>
+
+
+    <article class="tool-card">
+      <div class="tool-icon">🌡️</div>
+      <h2 id="temperatureTitle">Temperature Converter</h2>
+      <p id="temperatureDescription">
+        Convert Celsius, Fahrenheit and Kelvin temperatures.
+      </p>
+      <a href="temperature-converter.html" class="tool-link" id="temperatureLink">
+        Open Converter →
+      </a>
+    </article>
+
+
+    <article class="tool-card">
+      <div class="tool-icon">📐</div>
+      <h2 id="areaTitle">Area Converter</h2>
+      <p id="areaDescription">
+        Convert square meters, acres, hectares and other area units.
+      </p>
+      <a href="area-converter.html" class="tool-link" id="areaLink">
+        Open Converter →
+      </a>
+    </article>
+
+
+    <article class="tool-card">
+      <div class="tool-icon">🧪</div>
+      <h2 id="volumeTitle">Volume Converter</h2>
+      <p id="volumeDescription">
+        Convert liters, milliliters, gallons and other volume units.
+      </p>
+      <a href="volume-converter.html" class="tool-link" id="volumeLink">
+        Open Converter →
+      </a>
+    </article>
+
+
+    <article class="tool-card">
+      <div class="tool-icon">🚗</div>
+      <h2 id="speedTitle">Speed Converter</h2>
+      <p id="speedDescription">
+        Convert km/h, mph, m/s, knots and other speed units.
+      </p>
+      <a href="speed-converter.html" class="tool-link" id="speedLink">
+        Open Converter →
+      </a>
+    </article>
+
+
+    <article class="tool-card">
+      <div class="tool-icon">⏱️</div>
+      <h2 id="timeTitle">Time Converter</h2>
+      <p id="timeDescription">
+        Convert seconds, minutes, hours, days, weeks and years.
+      </p>
+      <a href="time-converter.html" class="tool-link" id="timeLink">
+        Open Converter →
+      </a>
+    </article>
+
+  </section>
+
+
+  <section class="about">
+
+    <h2 id="aboutTitle">About Conversion Tools</h2>
+
+    <p id="aboutText1">
+      Conversion Tools is a free online platform designed to make everyday conversions simple, fast and accessible from any device.
+    </p>
+
+    <p id="aboutText2">
+      Our collection includes useful tools for currency, length, weight, temperature, area, volume, speed and time conversions.
+    </p>
+
+    <p id="aboutText3">
+      Select any converter above, enter your value, choose the units and get your result instantly.
+    </p>
+
+
+    <div class="features">
+
+      <div class="feature">
+        <div class="feature-icon">⚡</div>
+        <h3 id="fastTitle">Fast</h3>
+        <p id="fastText">
+          Get conversion results quickly without complicated steps.
+        </p>
+      </div>
+
+
+      <div class="feature">
+        <div class="feature-icon">📱</div>
+        <h3 id="mobileTitle">Mobile Friendly</h3>
+        <p id="mobileText">
+          Designed to work smoothly on phones, tablets and computers.
+        </p>
+      </div>
+
+
+      <div class="feature">
+        <div class="feature-icon">🆓</div>
+        <h3 id="freeTitle">Free to Use</h3>
+        <p id="freeText">
+          Our conversion tools are available online for free.
+        </p>
+      </div>
+
     </div>
 
-    <script>
-        const translations = {
-            en: {
-                dir: "ltr", title: "Conversion Tools", logo: "Conversion Tools", about: "About", contact: "Contact",
-                heading: "Free Online Conversion Tools", desc: "Convert currencies, measurements and units quickly and easily. Use our free online conversion calculators for everyday calculations.",
-                search: "Search for a conversion tool...", popular: "Popular Conversion Tools",
-                c1t: "Currency Converter", c1d: "Convert currencies quickly using exchange rates.", c1l: "Open Converter →",
-                c2t: "Length Converter", c2d: "Convert meters, kilometers, miles and other length units.", c2l: "Open Converter →",
-                c3t: "Weight Converter", c3d: "Convert kilograms, grams, pounds and other weight units.", c3l: "Open Converter →",
-                c4t: "Temperature Converter", c4d: "Convert Celsius, Fahrenheit, Kelvin and other temperatures.", c4l: "Open Converter →",
-                c5t: "Area Converter", c5d: "Convert square meters, acres, hectares and more.", c5l: "Open Converter →",
-                c6t: "Volume Converter", c6d: "Convert liters, milliliters, gallons and other volume units.", c6l: "Open Converter →",
-                c7t: "Speed Converter", c7d: "Convert km/h, mph, m/s, knots and other speed units.", c7l: "Open Converter →",
-                c8t: "Time Converter", c8d: "Convert seconds, minutes, hours, days, weeks and years.", c8l: "Open Converter →",
-                aboutT: "About Conversion Tools", aboutD: "Conversion Tools Is a free online platform designed to make everyday unit and measurement conversions simple, fast and accessible.",
-                f1t: "Fast", f1d: "Get conversion results quickly without complicated steps.",
-                f2t: "Mobile Friendly", f2d: "Designed to work smoothly on smartphones, tablets and computers.",
-                f3t: "Free to Use", f3d: "Our online conversion tools are available to use for free.",
-                whyT: "Why Use Our Conversion Tools?", whyD: "Online unit conversion is useful for everyday tasks, education, travel, business, shopping and many other situations.",
-                w1: "Convert common units quickly and easily.", w2: "Use the tools on smartphones, tablets and desktop computers.",
-                w3: "Choose from multiple measurement categories.", w4: "Access the converters online without installing software."
-            },
-            ar: {
-                dir: "rtl", title: "أدوات التحويل", logo: "أدوات التحويل", about: "حول الموقع", contact: "اتصل بنا",
-                heading: "أدوات التحويل المجانية عبر الإنترنت", desc: "قم بتحويل العملات والقياسات ووحدات القياس بسرعة وسهولة. استخدم حاسبات التحويل المجانية الخاصة بنا للحسابات اليومية.",
-                search: "ابحث عن أداة تحويل...", popular: "أدوات التحويل الشائعة",
-                c1t: "محول العملات", c1d: "تحويل العملات بسرعة باستخدام أسعار الصرف.", c1l: "فتح المحول ←",
-                c2t: "محول الطول", c2d: "تحويل الأمتار والكيلومترات والأميل ووحدات الطول الأخرى.", c2l: "فتح المحول ←",
-                c3t: "محول الوزن", c3d: "تحويل الكيلوجرامات والجرامات والرطل ووحدات الوزن الأخرى.", c3l: "فتح المحول ←",
-                c4t: "محول الحرارة", c4d: "تحويل درجات الحرارة مئوية، فهرنهايت، كلفن وغيرها.", c4l: "فتح المحول ←",
-                c5t: "محول المساحة", c5d: "تحويل الأمتار المربعة، الأفدنة، الهكتارات والمزيد.", c5l: "فتح المحول ←",
-                c6t: "محول الحجم", c6d: "تحويل اللترات، المليلترات، الجالونات ووحدات الحجم الأخرى.", c6l: "فتح المحول ←",
-                c7t: "محول السرعة", c7d: "تحويل كم/س، ميل/س، عقدة ووحدات السرعة الأخرى.", c7l: "فتح المحول ←",
-                c8t: "محول الوقت", c8d: "تحويل الثواني، الدقائق، الساعات، الأيام، الأسابيع والسنوات.", c8l: "فتح المحول ←",
-                aboutT: "حول أدوات التحويل", aboutD: "أدوات التحويل هي منصة مجانية عبر الإنترنت مصممة لجعل تحويلات الوحدات والقياسات اليومية بسيطة وسريعة ومتاحة للجميع.",
-                f1t: "سريع", f1d: "احصل على نتائج التحويل بسرعة دون خطوات معقدة.",
-                f2t: "متوافق مع الجوال", f2d: "مصمم ليعمل بسلاسة على الهواتف الذكية والأجهزة اللوحية وأجهزة الكمبيوتر.",
-                f3t: "مجاني للاستخدام", f3d: "أدوات التحويل عبر الإنترنت متاحة للاستخدام مجاناً.",
-                whyT: "لماذا تستخدم أدوات التحويل الخاصة بنا؟", whyD: "تحويل الوحدات عبر الإنترنت مفيد للمهام اليومية، التعليم، السفر، العمل، التسوق والعديد من المواقف الأخرى.",
-                w1: "تحويل الوحدات الشائعة بسرعة وسهولة.", w2: "استخدام الأدوات على الهواتف الذكية والأجهزة اللوحية وأجهزة الكمبيوتر.",
-                w3: "الاختيار من بين فئات قياس متعددة.", w4: "الوصول إلى المحولات عبر الإنترنت دون تثبيت أي برامج."
-            },
-            fr: {
-                dir: "ltr", title: "Outils de Conversion", logo: "Outils de Conversion", about: "À propos", contact: "Contact",
-                heading: "Outils de Conversion en Ligne Gratuits", desc: "Convertissez des devises, des mesures et des unités rapidement et facilement.",
-                search: "Rechercher un outil de conversion...", popular: "Outils de Conversion Populaires",
-                c1t: "Convertisseur de Devises", c1d: "Convertissez des devises rapidement.", c1l: "Ouvrir →",
-                c2t: "Convertisseur de Longueur", c2d: "Convertissez mètres, kilomètres, miles.", c2l: "Ouvrir →",
-                c3t: "Convertisseur de Poids", c3d: "Convertissez kilogrammes, grammes, livres.", c3l: "Ouvrir →",
-                c4t: "Convertisseur de Température", c4d: "Convertissez Celsius, Fahrenheit, Kelvin.", c4l: "Ouvrir →",
-                c5t: "Convertisseur de Surface", c5d: "Convertissez mètres carrés, acres, hectares.", c5l: "Ouvrir →",
-                c6t: "Convertisseur de Volume", c6d: "Convertissez litres, millilitres, gallons.", c6l: "Ouvrir →",
-                c7t: "Convertisseur de Vitesse", c7d: "Convertissez km/h, mph, m/s, nœuds.", c7l: "Ouvrir →",
-                c8t: "Convertisseur de Temps", c8d: "Convertissez secondes, minutes, heures, jours.", c8l: "Ouvrir →",
-                aboutT: "À propos des Outils de Conversion", aboutD: "Plateforme en ligne gratuite pour simplifier vos conversions.",
-                f1t: "Rapide", f1d: "Obtenez des résultats rapidement sans étapes compliquées.",
-                f2t: "Compatible Mobile", f2d: "Conçu pour fonctionner sur smartphones et ordinateurs.",
-                f3t: "Gratuit", f3d: "Nos outils sont entièrement gratuits.",
-                whyT: "Pourquoi utiliser nos outils ?", whyD: "Utile pour les tâches quotidiennes, l'éducation, les voyages et le travail.",
-                w1: "Convertissez des unités courantes rapidement.", w2: "Utilisez les outils sur mobiles et PC.",
-                w3: "Choisissez parmi plusieurs catégories.", w4: "Accédez en ligne sans installation."
-            }
-        };
+  </section>
 
-        function changeLanguage(lang) {
-            const t = translations[lang];
-            if (!t) return;
+</main>
 
-            document.getElementById('html-root').setAttribute('lang', lang);
-            document.getElementById('html-root').setAttribute('dir', t.dir);
-            document.getElementById('page-title').innerText = t.title;
-            document.getElementById('txt-logo').innerText = t.logo;
-            document.getElementById('txt-about').innerText = t.about;
-            document.getElementById('txt-contact').innerText = t.contact;
-            document.getElementById('txt-heading').innerText = t.heading;
-            document.getElementById('txt-desc').innerText = t.desc;
-            document.getElementById('search-placeholder').placeholder = t.search;
-            document.getElementById('txt-popular').innerText = t.popular;
 
-            for (let i = 1; i <= 8; i++) {
-                document.getElementById(`c${i}-title`).innerText = t[`c${i}t`];
-                document.getElementById(`c${i}-desc`).innerText = t[`c${i}d`];
-                document.getElementById(`c${i}-link`).innerText = t[`c${i}l`];
-            }
+<footer>
 
-            document.getElementById('about-title').innerText = t.aboutT;
-            document.getElementById('about-desc').innerText = t.aboutD;
-            document.getElementById('f1-title').innerText = t.f1t;
-            document.getElementById('f1-desc').innerText = t.f1d;
-            document.getElementById('f2-title').innerText = t.f2t;
-            document.getElementById('f2-desc').innerText = t.f2d;
-            document.getElementById('f3-title').innerText = t.f3t;
-            document.getElementById('f3-desc').innerText = t.f3d;
+  <div class="footer-links">
+    <a href="index.html" id="homeLink">Home</a>
+    <a href="about.html" id="aboutLink">About Us</a>
+    <a href="contact.html" id="contactLink">Contact</a>
+    <a href="privacy-policy.html" id="privacyLink">Privacy Policy</a>
+    <a href="terms.html" id="termsLink">Terms</a>
+  </div>
 
-            document.getElementById('why-title').innerText = t.whyT;
-            document.getElementById('why-desc').innerText = t.whyD;
-            for (let i = 1; i <= 4; i++) {
-                document.getElementById(`w${i}`).innerText = t[`w${i}`];
-            }
-        }
-    </script>
+  <p id="copyright">
+    © 2026 Conversion Tools. All rights reserved.
+  </p>
+
+</footer>
+
+
+<script>
+
+  const translations = {
+
+    en: {
+
+      title: "Free Online Conversion Tools",
+
+      description:
+        "Convert currencies, length, weight, temperature, area, volume, speed and time quickly and easily.",
+
+      currencyTitle: "Currency Converter",
+      currencyDescription: "Convert currencies using updated exchange rates.",
+      open: "Open Converter →",
+
+      lengthTitle: "Length Converter",
+      lengthDescription:
+        "Convert meters, kilometers, miles, feet, inches and other length units.",
+
+      weightTitle: "Weight Converter",
+      weightDescription:
+        "Convert kilograms, grams, pounds, ounces and other weight units.",
+
+      temperatureTitle: "Temperature Converter",
+      temperatureDescription:
+        "Convert Celsius, Fahrenheit and Kelvin temperatures.",
+
+      areaTitle: "Area Converter",
+      areaDescription:
+        "Convert square meters, acres, hectares and other area units.",
+
+      volumeTitle: "Volume Converter",
+      volumeDescription:
+        "Convert liters, milliliters, gallons and other volume units.",
+
+      speedTitle: "Speed Converter",
+      speedDescription:
+        "Convert km/h, mph, m/s, knots and other speed units.",
+
+      timeTitle: "Time Converter",
+      timeDescription:
+        "Convert seconds, minutes, hours, days, weeks and years.",
+
+      aboutTitle: "About Conversion Tools",
+
+      aboutText1:
+        "Conversion Tools is a free online platform designed to make everyday conversions simple, fast and accessible from any device.",
+
+      aboutText2:
+        "Our collection includes useful tools for currency, length, weight, temperature, area, volume, speed and time conversions.",
+
+      aboutText3:
+        "Select any converter above, enter your value, choose the units and get your result instantly.",
+
+      fastTitle: "Fast",
+      fastText:
+        "Get conversion results quickly without complicated steps.",
+
+      mobileTitle: "Mobile Friendly",
+      mobileText:
+        "Designed to work smoothly on phones, tablets and computers.",
+
+      freeTitle: "Free to Use",
+      freeText:
+        "Our conversion tools are available online for free.",
+
+      home: "Home",
+      about: "About Us",
+      contact: "Contact",
+      privacy: "Privacy Policy",
+      terms: "Terms",
+
+      copyright:
+        "© 2026 Conversion Tools. All rights reserved.",
+
+      pageTitle:
+        "Conversion Tools - Free Online Converters"
+
+    },
+
+
+    fr: {
+
+      title: "Outils de conversion en ligne gratuits",
+
+      description:
+        "Convertissez rapidement et facilement les devises, longueurs, poids, températures, surfaces, volumes, vitesses et durées.",
+
+      currencyTitle: "Convertisseur de devises",
+      currencyDescription:
+        "Convertissez les devises avec des taux de change mis à jour.",
+      open: "Ouvrir le convertisseur →",
+
+      lengthTitle: "Convertisseur de longueur",
+      lengthDescription:
+        "Convertissez les mètres, kilomètres, miles, pieds, pouces et autres unités de longueur.",
+
+      weightTitle: "Convertisseur de poids",
+      weightDescription:
+        "Convertissez les kilogrammes, grammes, livres, onces et autres unités de poids.",
+
+      temperatureTitle: "Convertisseur de température",
+      temperatureDescription:
+        "Convertissez les températures Celsius, Fahrenheit et Kelvin.",
+
+      areaTitle: "Convertisseur de surface",
+      areaDescription:
+        "Convertissez les mètres carrés, acres, hectares et autres unités de surface.",
+
+      volumeTitle: "Convertisseur de volume",
+      volumeDescription:
+        "Convertissez les litres, millilitres, gallons et autres unités de volume.",
+
+      speedTitle: "Convertisseur de vitesse",
+      speedDescription:
+        "Convertissez les km/h, mph, m/s, nœuds et autres unités de vitesse.",
+
+      timeTitle: "Convertisseur de temps",
+      timeDescription:
+        "Convertissez les secondes, minutes, heures, jours, semaines et années.",
+
+      aboutTitle: "À propos de Conversion Tools",
+
+      aboutText1:
+        "Conversion Tools est une plateforme en ligne gratuite conçue pour rendre les conversions quotidiennes simples, rapides et accessibles depuis n'importe quel appareil.",
+
+      aboutText2:
+        "Notre collection comprend des outils utiles pour convertir les devises, longueurs, poids, températures, surfaces, volumes, vitesses et durées.",
+
+      aboutText3:
+        "Sélectionnez un convertisseur, saisissez votre valeur, choisissez les unités et obtenez instantanément votre résultat.",
+
+      fastTitle: "Rapide",
+      fastText:
+        "Obtenez rapidement vos résultats sans étapes compliquées.",
+
+      mobileTitle: "Compatible mobile",
+      mobileText:
+        "Conçu pour fonctionner facilement sur les téléphones, tablettes et ordinateurs.",
+
+      freeTitle: "Gratuit",
+      freeText:
+        "Nos outils de conversion sont disponibles gratuitement en ligne.",
+
+      home: "Accueil",
+      about: "À propos",
+      contact: "Contact",
+      privacy: "Politique de confidentialité",
+      terms: "Conditions",
+
+      copyright:
+        "© 2026 Conversion Tools. Tous droits réservés.",
+
+      pageTitle:
+        "Conversion Tools - Convertisseurs en ligne gratuits"
+
+    },
+
+
+    ar: {
+
+      title: "أدوات التحويل المجانية عبر الإنترنت",
+
+      description:
+        "حوّل العملات والطول والوزن ودرجة الحرارة والمساحة والحجم والسرعة والوقت بسهولة وسرعة.",
+
+      currencyTitle: "محول العملات",
+      currencyDescription:
+        "حوّل العملات باستخدام أسعار الصرف المحدثة.",
+      open: "فتح المحول ←",
+
+      lengthTitle: "محول الطول",
+      lengthDescription:
+        "حوّل الأمتار والكيلومترات والأميال والأقدام والبوصات وغيرها من وحدات الطول.",
+
+      weightTitle: "محول الوزن",
+      weightDescription:
+        "حوّل الكيلوغرامات والغرامات والرطل والأونصة وغيرها من وحدات الوزن.",
+
+      temperatureTitle: "محول درجة الحرارة",
+      temperatureDescription:
+        "حوّل درجات الحرارة بين المئوية والفهرنهايت والكلفن.",
+
+      areaTitle: "محول المساحة",
+      areaDescription:
+        "حوّل الأمتار المربعة والأفدنة والهكتارات وغيرها من وحدات المساحة.",
+
+      volumeTitle: "محول الحجم",
+      volumeDescription:
+        "حوّل اللترات والمليلترات والجالونات وغيرها من وحدات الحجم.",
+
+      speedTitle: "محول السرعة",
+      speedDescription:
+        "حوّل بين كم/ساعة و ميل/ساعة ومتر/ثانية والعقدة وغيرها.",
+
+      timeTitle: "محول الوقت",
+      timeDescription:
+        "حوّل بين الثواني والدقائق والساعات والأيام والأسابيع والسنوات.",
+
+      aboutTitle: "حول Conversion Tools",
+
+      aboutText1:
+        "Conversion Tools هي منصة مجانية عبر الإنترنت مصممة لجعل عمليات التحويل اليومية سهلة وسريعة ومتاحة من أي جهاز.",
+
+      aboutText2:
+        "تضم منصتنا مجموعة من الأدوات المفيدة لتحويل العملات والطول والوزن ودرجة الحرارة والمساحة والحجم والسرعة والوقت.",
+
+      aboutText3:
+        "اختر أي محول أعلاه، أدخل القيمة، حدد الوحدات واحصل على النتيجة فورًا.",
+
+      fastTitle: "سريع",
+      fastText:
+        "احصل على نتائج التحويل بسرعة دون خطوات معقدة.",
+
+      mobileTitle: "متوافق مع الهاتف",
+      mobileText:
+        "مصمم للعمل بسلاسة على الهواتف والأجهزة اللوحية وأجهزة الكمبيوتر.",
+
+      freeTitle: "مجاني",
+      freeText:
+        "أدوات التحويل الخاصة بنا متاحة مجانًا عبر الإنترنت.",
+
+      home: "الرئيسية",
+      about: "من نحن",
+      contact: "اتصل بنا",
+      privacy: "سياسة الخصوصية",
+      terms: "الشروط",
+
+      copyright:
+        "© 2026 Conversion Tools. جميع الحقوق محفوظة.",
+
+      pageTitle:
+        "Conversion Tools - أدوات تحويل مجانية عبر الإنترنت"
+
+    }
+
+  };
+
+
+  function setLanguage(language) {
+
+    const t = translations[language];
+
+    document.documentElement.lang = language;
+
+    document.documentElement.dir =
+      language === "ar" ? "rtl" : "ltr";
+
+    document.title = t.pageTitle;
+
+    document.getElementById("mainTitle").textContent = t.title;
+    document.getElementById("mainDescription").textContent = t.description;
+
+    document.getElementById("currencyTitle").textContent = t.currencyTitle;
+    document.getElementById("currencyDescription").textContent = t.currencyDescription;
+
+    document.getElementById("lengthTitle").textContent = t.lengthTitle;
+    document.getElementById("lengthDescription").textContent = t.lengthDescription;
+
+    document.getElementById("weightTitle").textContent = t.weightTitle;
+    document.getElementById("weightDescription").textContent = t.weightDescription;
+
+    document.getElementById("temperatureTitle").textContent = t.temperatureTitle;
+    document.getElementById("temperatureDescription").textContent = t.temperatureDescription;
+
+    document.getElementById("areaTitle").textContent = t.areaTitle;
+    document.getElementById("areaDescription").textContent = t.areaDescription;
+
+    document.getElementById("volumeTitle").textContent = t.volumeTitle;
+    document.getElementById("volumeDescription").textContent = t.volumeDescription;
+
+    document.getElementById("speedTitle").textContent = t.speedTitle;
+    document.getElementById("speedDescription").textContent = t.speedDescription;
+
+    document.getElementById("timeTitle").textContent = t.timeTitle;
+    document.getElementById("timeDescription").textContent = t.timeDescription;
+
+    document.querySelectorAll(".tool-link").forEach(function(link) {
+      link.textContent = t.open;
+    });
+
+    document.getElementById("aboutTitle").textContent = t.aboutTitle;
+
+    document.getElementById("aboutText1").textContent = t.aboutText1;
+    document.getElementById("aboutText2").textContent = t.aboutText2;
+    document.getElementById("aboutText3").textContent = t.aboutText3;
+
+    document.getElementById("fastTitle").textContent = t.fastTitle;
+    document.getElementById("fastText").textContent = t.fastText;
+
+    document.getElementById("mobileTitle").textContent = t.mobileTitle;
+    document.getElementById("mobileText").textContent = t.mobileText;
+
+    document.getElementById("freeTitle").textContent = t.freeTitle;
+    document.getElementById("freeText").textContent = t.freeText;
+
+    document.getElementById("homeLink").textContent = t.home;
+    document.getElementById("aboutLink").textContent = t.about;
+    document.getElementById("contactLink").textContent = t.contact;
+    document.getElementById("privacyLink").textContent = t.privacy;
+    document.getElementById("termsLink").textContent = t.terms;
+
+    document.getElementById("copyright").textContent = t.copyright;
+
+    localStorage.setItem("preferredLanguage", language);
+  }
+
+
+  document
+    .getElementById("languageSelect")
+    .addEventListener("change", function() {
+      setLanguage(this.value);
+    });
+
+
+  const savedLanguage =
+    localStorage.getItem("preferredLanguage") || "en";
+
+  document.getElementById("languageSelect").value =
+    savedLanguage;
+
+  setLanguage(savedLanguage);
+
+</script>
+
 </body>
 </html>
