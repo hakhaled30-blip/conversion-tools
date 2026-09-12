@@ -4,11 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Area Converter - Free Online Tool</title>
+  <title>Area Converter - Square Meters, Acres & Hectares</title>
 
-  <meta name="description" content="Free online area converter. Convert square meters, square kilometers, square centimeters, square miles, acres, hectares and more.">
+  <meta name="description" content="Free online area converter. Convert square meters, square kilometers, square feet, square yards, acres, hectares and more quickly and accurately.">
 
   <meta name="robots" content="index, follow">
+
+  <link rel="canonical" href="https://hakhaled30-blip.github.io/conversion-tools/area-converter.html">
+
+  <meta name="theme-color" content="#2563eb">
+
+  <meta property="og:title" content="Area Converter - Free Online Tool">
+  <meta property="og:description" content="Convert area measurements between square meters, acres, hectares, square feet and more.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://hakhaled30-blip.github.io/conversion-tools/area-converter.html">
 
   <style>
     * {
@@ -17,25 +26,34 @@
       padding: 0;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: Arial, Helvetica, sans-serif;
       background: #f5f7fb;
       color: #1f2937;
       min-height: 100vh;
+      line-height: 1.6;
     }
 
     header {
       background: #ffffff;
       border-bottom: 1px solid #e5e7eb;
-      padding: 18px 20px;
+      padding: 17px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
 
     .header-content {
-      max-width: 1050px;
+      max-width: 1100px;
       margin: auto;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 20px;
     }
 
     .logo {
@@ -43,12 +61,14 @@
       text-decoration: none;
       font-size: 23px;
       font-weight: 700;
+      white-space: nowrap;
     }
 
     .home-link {
       color: #374151;
       text-decoration: none;
       font-size: 15px;
+      font-weight: 600;
     }
 
     .home-link:hover {
@@ -56,66 +76,74 @@
     }
 
     main {
-      max-width: 900px;
-      margin: 50px auto;
-      padding: 0 20px;
+      max-width: 1050px;
+      margin: 0 auto;
+      padding: 55px 20px 70px;
     }
 
     .intro {
       text-align: center;
-      margin-bottom: 30px;
+      max-width: 760px;
+      margin: 0 auto 34px;
     }
 
     .intro h1 {
-      font-size: 40px;
+      font-size: 42px;
+      line-height: 1.2;
       color: #111827;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
     }
 
     .intro p {
       color: #6b7280;
-      font-size: 17px;
+      font-size: 18px;
     }
 
     .converter {
+      max-width: 760px;
+      margin: 0 auto;
       background: #ffffff;
-      padding: 32px;
-      border-radius: 18px;
+      padding: 34px;
+      border-radius: 20px;
       border: 1px solid #e5e7eb;
-      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.06);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.07);
     }
 
     .field {
-      margin-bottom: 20px;
+      margin-bottom: 21px;
     }
 
     .field label {
       display: block;
-      margin-bottom: 8px;
+      margin-bottom: 9px;
       font-weight: 700;
       color: #374151;
+      font-size: 15px;
     }
 
     .field input,
     .field select {
       width: 100%;
-      padding: 14px;
+      padding: 15px 16px;
       border: 1px solid #d1d5db;
-      border-radius: 10px;
+      border-radius: 11px;
       font-size: 16px;
       background: #ffffff;
+      color: #111827;
+      transition: border-color 0.2s, box-shadow 0.2s;
     }
 
     .field input:focus,
     .field select:focus {
       outline: none;
       border-color: #2563eb;
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
     }
 
     .swap-container {
       display: flex;
       justify-content: center;
-      margin: -4px 0 18px;
+      margin: -2px 0 19px;
     }
 
     .swap-button {
@@ -125,49 +153,68 @@
       border: 1px solid #d1d5db;
       background: #ffffff;
       color: #2563eb;
-      font-size: 20px;
+      font-size: 21px;
       cursor: pointer;
+      transition: 0.2s;
     }
 
     .swap-button:hover {
       background: #eff6ff;
+      border-color: #2563eb;
+      transform: rotate(180deg);
     }
 
     .convert-button {
       width: 100%;
-      padding: 15px;
+      padding: 16px;
       border: none;
-      border-radius: 10px;
+      border-radius: 11px;
       background: #2563eb;
       color: #ffffff;
       font-size: 17px;
       font-weight: 700;
       cursor: pointer;
-      margin-top: 5px;
+      margin-top: 4px;
+      transition: background 0.2s, transform 0.2s;
     }
 
     .convert-button:hover {
       background: #1d4ed8;
+      transform: translateY(-1px);
+    }
+
+    .convert-button:active {
+      transform: translateY(0);
     }
 
     .result {
       display: none;
       margin-top: 25px;
-      padding: 22px;
-      border-radius: 14px;
+      padding: 24px 20px;
+      border-radius: 15px;
       background: #eff6ff;
+      border: 1px solid #dbeafe;
       text-align: center;
     }
 
+    .result-label {
+      font-size: 13px;
+      font-weight: 700;
+      color: #6b7280;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 7px;
+    }
+
     .result-text {
-      font-size: 27px;
+      font-size: 28px;
       font-weight: 700;
       color: #1d4ed8;
       word-break: break-word;
     }
 
     .formula {
-      margin-top: 10px;
+      margin-top: 9px;
       color: #4b5563;
       font-size: 14px;
     }
@@ -178,64 +225,160 @@
       padding: 14px;
       border-radius: 10px;
       background: #fef2f2;
+      border: 1px solid #fecaca;
       color: #b91c1c;
       text-align: center;
       font-size: 14px;
     }
 
-    .info {
-      margin-top: 35px;
+    .content-grid {
+      max-width: 900px;
+      margin: 40px auto 0;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .info-card {
       background: #ffffff;
-      padding: 25px;
-      border-radius: 14px;
+      padding: 28px;
+      border-radius: 16px;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.035);
+    }
+
+    .info-card h2 {
+      color: #111827;
+      font-size: 21px;
+      margin-bottom: 13px;
+    }
+
+    .info-card p {
+      color: #6b7280;
+      margin-bottom: 10px;
+      line-height: 1.75;
+    }
+
+    .info-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .units-section {
+      max-width: 900px;
+      margin: 22px auto 0;
+      background: #ffffff;
+      padding: 28px;
+      border-radius: 16px;
       border: 1px solid #e5e7eb;
     }
 
-    .info h2 {
-      margin-bottom: 12px;
+    .units-section h2 {
+      color: #111827;
+      font-size: 21px;
+      margin-bottom: 18px;
+    }
+
+    .units-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px 30px;
+    }
+
+    .unit-item {
+      padding: 10px 0;
+      border-bottom: 1px solid #f0f1f3;
+      color: #4b5563;
+    }
+
+    .unit-item strong {
       color: #111827;
     }
 
-    .info p {
-      color: #6b7280;
-      margin-bottom: 10px;
-      line-height: 1.7;
-    }
-
     footer {
-      margin-top: 60px;
+      margin-top: 0;
       background: #111827;
       color: #d1d5db;
       text-align: center;
-      padding: 30px 20px;
+      padding: 38px 20px;
+    }
+
+    .footer-links {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px 18px;
     }
 
     footer a {
       color: #ffffff;
       text-decoration: none;
-      margin: 0 8px;
-    }
-
-    footer p {
-      margin-top: 12px;
       font-size: 14px;
     }
 
-    @media (max-width: 600px) {
+    footer a:hover {
+      color: #93c5fd;
+    }
+
+    footer p {
+      margin-top: 18px;
+      font-size: 14px;
+      color: #9ca3af;
+    }
+
+    @media (max-width: 700px) {
+      header {
+        padding: 15px;
+      }
+
+      .logo {
+        font-size: 20px;
+      }
+
       main {
-        margin: 35px auto;
+        padding: 40px 15px 55px;
+      }
+
+      .intro {
+        margin-bottom: 26px;
       }
 
       .intro h1 {
-        font-size: 31px;
+        font-size: 32px;
+      }
+
+      .intro p {
+        font-size: 16px;
       }
 
       .converter {
-        padding: 22px;
+        padding: 23px 19px;
+        border-radius: 16px;
+      }
+
+      .content-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        margin-top: 28px;
+      }
+
+      .info-card,
+      .units-section {
+        padding: 23px 20px;
+      }
+
+      .units-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
       }
 
       .result-text {
         font-size: 22px;
+      }
+
+      .footer-links {
+        gap: 12px 15px;
       }
     }
   </style>
@@ -260,22 +403,17 @@
   <main>
 
     <section class="intro">
-
       <h1>Area Converter</h1>
-
       <p>
-        Convert area units quickly and accurately.
+        Convert area measurements quickly and accurately between
+        square meters, acres, hectares and other common units.
       </p>
-
     </section>
 
     <section class="converter">
 
       <div class="field">
-
-        <label for="amount">
-          Area
-        </label>
+        <label for="amount">Area</label>
 
         <input
           type="number"
@@ -283,126 +421,55 @@
           value="1"
           min="0"
           step="any"
-          placeholder="Enter area"
+          placeholder="Enter area value"
+          inputmode="decimal"
         >
-
       </div>
 
       <div class="field">
-
-        <label for="fromUnit">
-          From
-        </label>
+        <label for="fromUnit">From</label>
 
         <select id="fromUnit">
-
-          <option value="square-meter">
-            Square Meter (m²)
-          </option>
-
-          <option value="square-kilometer">
-            Square Kilometer (km²)
-          </option>
-
-          <option value="square-centimeter">
-            Square Centimeter (cm²)
-          </option>
-
-          <option value="square-millimeter">
-            Square Millimeter (mm²)
-          </option>
-
-          <option value="square-mile">
-            Square Mile (mi²)
-          </option>
-
-          <option value="square-yard">
-            Square Yard (yd²)
-          </option>
-
-          <option value="square-foot">
-            Square Foot (ft²)
-          </option>
-
-          <option value="square-inch">
-            Square Inch (in²)
-          </option>
-
-          <option value="acre">
-            Acre (ac)
-          </option>
-
-          <option value="hectare">
-            Hectare (ha)
-          </option>
-
+          <option value="square-meter">Square Meter (m²)</option>
+          <option value="square-kilometer">Square Kilometer (km²)</option>
+          <option value="square-centimeter">Square Centimeter (cm²)</option>
+          <option value="square-millimeter">Square Millimeter (mm²)</option>
+          <option value="square-mile">Square Mile (mi²)</option>
+          <option value="square-yard">Square Yard (yd²)</option>
+          <option value="square-foot">Square Foot (ft²)</option>
+          <option value="square-inch">Square Inch (in²)</option>
+          <option value="acre">Acre (ac)</option>
+          <option value="hectare">Hectare (ha)</option>
         </select>
-
       </div>
 
       <div class="swap-container">
-
         <button
           type="button"
           class="swap-button"
           onclick="swapUnits()"
           title="Swap units"
+          aria-label="Swap units"
         >
           ⇅
         </button>
-
       </div>
 
       <div class="field">
-
-        <label for="toUnit">
-          To
-        </label>
+        <label for="toUnit">To</label>
 
         <select id="toUnit">
-
-          <option value="square-kilometer">
-            Square Kilometer (km²)
-          </option>
-
-          <option value="square-meter">
-            Square Meter (m²)
-          </option>
-
-          <option value="square-centimeter">
-            Square Centimeter (cm²)
-          </option>
-
-          <option value="square-millimeter">
-            Square Millimeter (mm²)
-          </option>
-
-          <option value="square-mile">
-            Square Mile (mi²)
-          </option>
-
-          <option value="square-yard">
-            Square Yard (yd²)
-          </option>
-
-          <option value="square-foot">
-            Square Foot (ft²)
-          </option>
-
-          <option value="square-inch">
-            Square Inch (in²)
-          </option>
-
-          <option value="acre">
-            Acre (ac)
-          </option>
-
-          <option value="hectare">
-            Hectare (ha)
-          </option>
-
+          <option value="square-kilometer">Square Kilometer (km²)</option>
+          <option value="square-meter">Square Meter (m²)</option>
+          <option value="square-centimeter">Square Centimeter (cm²)</option>
+          <option value="square-millimeter">Square Millimeter (mm²)</option>
+          <option value="square-mile">Square Mile (mi²)</option>
+          <option value="square-yard">Square Yard (yd²)</option>
+          <option value="square-foot">Square Foot (ft²)</option>
+          <option value="square-inch">Square Inch (in²)</option>
+          <option value="acre">Acre (ac)</option>
+          <option value="hectare">Hectare (ha)</option>
         </select>
-
       </div>
 
       <button
@@ -410,48 +477,105 @@
         class="convert-button"
         onclick="convertArea()"
       >
-        Convert
+        Convert Area
       </button>
 
-      <div class="error" id="error"></div>
+      <div class="error" id="error" role="alert"></div>
 
-      <div class="result" id="result">
+      <div class="result" id="result" aria-live="polite">
 
-        <div
-          class="result-text"
-          id="resultText"
-        ></div>
+        <div class="result-label">
+          Conversion Result
+        </div>
 
-        <div
-          class="formula"
-          id="formulaText"
-        ></div>
+        <div class="result-text" id="resultText"></div>
+
+        <div class="formula" id="formulaText"></div>
 
       </div>
 
     </section>
 
-    <section class="info">
+    <section class="content-grid">
 
-      <h2>
-        About Area Conversion
-      </h2>
+      <article class="info-card">
+        <h2>About Area Conversion</h2>
 
-      <p>
-        Area conversion allows you to convert measurements between
-        different units of surface area.
-      </p>
+        <p>
+          Area conversion is used to change a measurement from one
+          unit of surface area to another while keeping the same
+          physical area.
+        </p>
 
-      <p>
-        This tool supports square meters, square kilometers,
-        square centimeters, square millimeters, square miles,
-        square yards, square feet, square inches, acres and hectares.
-      </p>
+        <p>
+          This calculator makes it easy to convert between metric
+          and imperial area units without manual calculations.
+        </p>
+      </article>
 
-      <p>
-        Enter a value, choose the original unit and select the unit
-        you want to convert to.
-      </p>
+      <article class="info-card">
+        <h2>How to Use This Converter</h2>
+
+        <p>
+          Enter the area value you want to convert, choose the original
+          unit, select the target unit, and click the Convert button.
+        </p>
+
+        <p>
+          You can also use the swap button to quickly reverse the
+          conversion direction.
+        </p>
+      </article>
+
+    </section>
+
+    <section class="units-section">
+
+      <h2>Supported Area Units</h2>
+
+      <div class="units-grid">
+
+        <div class="unit-item">
+          <strong>Square Meter (m²)</strong> — Standard metric area unit.
+        </div>
+
+        <div class="unit-item">
+          <strong>Square Kilometer (km²)</strong> — Used for large areas.
+        </div>
+
+        <div class="unit-item">
+          <strong>Square Centimeter (cm²)</strong> — Used for small surfaces.
+        </div>
+
+        <div class="unit-item">
+          <strong>Square Millimeter (mm²)</strong> — Used for very small areas.
+        </div>
+
+        <div class="unit-item">
+          <strong>Square Mile (mi²)</strong> — Imperial unit for large areas.
+        </div>
+
+        <div class="unit-item">
+          <strong>Square Yard (yd²)</strong> — Common imperial area unit.
+        </div>
+
+        <div class="unit-item">
+          <strong>Square Foot (ft²)</strong> — Commonly used for buildings and rooms.
+        </div>
+
+        <div class="unit-item">
+          <strong>Square Inch (in²)</strong> — Used for small imperial areas.
+        </div>
+
+        <div class="unit-item">
+          <strong>Acre (ac)</strong> — Commonly used for land measurement.
+        </div>
+
+        <div class="unit-item">
+          <strong>Hectare (ha)</strong> — Common metric unit for land areas.
+        </div>
+
+      </div>
 
     </section>
 
@@ -459,29 +583,35 @@
 
   <footer>
 
-    <a href="index.html">
-      Home
-    </a>
+    <div class="footer-links">
 
-    <a href="currency-converter.html">
-      Currency Converter
-    </a>
+      <a href="index.html">Home</a>
 
-    <a href="length-converter.html">
-      Length Converter
-    </a>
+      <a href="currency-converter.html">
+        Currency Converter
+      </a>
 
-    <a href="weight-converter.html">
-      Weight Converter
-    </a>
+      <a href="length-converter.html">
+        Length Converter
+      </a>
 
-    <a href="temperature-converter.html">
-      Temperature Converter
-    </a>
+      <a href="weight-converter.html">
+        Weight Converter
+      </a>
 
-    <a href="area-converter.html">
-      Area Converter
-    </a>
+      <a href="temperature-converter.html">
+        Temperature Converter
+      </a>
+
+      <a href="area-converter.html">
+        Area Converter
+      </a>
+
+      <a href="volume-converter.html">
+        Volume Converter
+      </a>
+
+    </div>
 
     <p>
       © 2026 Conversion Tools. All rights reserved.
@@ -491,30 +621,17 @@
 
   <script>
 
-    /*
-      Conversion factors relative to one square meter.
-    */
-
     const areaUnits = {
 
       "square-meter": 1,
-
       "square-kilometer": 1000000,
-
       "square-centimeter": 0.0001,
-
       "square-millimeter": 0.000001,
-
       "square-mile": 2589988.110336,
-
       "square-yard": 0.83612736,
-
       "square-foot": 0.09290304,
-
       "square-inch": 0.00064516,
-
       "acre": 4046.8564224,
-
       "hectare": 10000
 
     };
@@ -523,23 +640,14 @@
     const unitNames = {
 
       "square-meter": "m²",
-
       "square-kilometer": "km²",
-
       "square-centimeter": "cm²",
-
       "square-millimeter": "mm²",
-
       "square-mile": "mi²",
-
       "square-yard": "yd²",
-
       "square-foot": "ft²",
-
       "square-inch": "in²",
-
       "acre": "ac",
-
       "hectare": "ha"
 
     };
@@ -548,9 +656,7 @@
     function convertArea() {
 
       const amount =
-        Number(
-          document.getElementById("amount").value
-        );
+        Number(document.getElementById("amount").value);
 
       const from =
         document.getElementById("fromUnit").value;
@@ -572,7 +678,6 @@
 
 
       error.style.display = "none";
-
       result.style.display = "none";
 
 
@@ -581,24 +686,15 @@
         error.textContent =
           "Please enter a valid area value.";
 
-        error.style.display =
-          "block";
+        error.style.display = "block";
 
         return;
       }
 
 
-      /*
-        Convert the original value to square meters.
-      */
-
       const squareMeters =
         amount * areaUnits[from];
 
-
-      /*
-        Convert square meters to the target unit.
-      */
 
       const converted =
         squareMeters / areaUnits[to];
@@ -615,8 +711,7 @@
 
 
       const oneUnit =
-        areaUnits[from] /
-        areaUnits[to];
+        areaUnits[from] / areaUnits[to];
 
 
       formulaText.textContent =
@@ -628,8 +723,7 @@
         unitNames[to];
 
 
-      result.style.display =
-        "block";
+      result.style.display = "block";
     }
 
 
@@ -645,23 +739,16 @@
       const temporary =
         from.value;
 
-
       from.value =
         to.value;
-
 
       to.value =
         temporary;
 
 
-      document.getElementById(
-        "result"
-      ).style.display = "none";
+      document.getElementById("result").style.display = "none";
 
-
-      document.getElementById(
-        "error"
-      ).style.display = "none";
+      document.getElementById("error").style.display = "none";
     }
 
 
