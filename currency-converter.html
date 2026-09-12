@@ -12,11 +12,28 @@
 
   <link rel="canonical" href="https://hakhaled30-blip.github.io/conversion-tools/currency-converter.html">
 
+  <meta name="theme-color" content="#2563eb">
+
   <meta property="og:type" content="website">
   <meta property="og:title" content="Currency Converter - Free Online Currency Converter">
-  <meta property="og:description" content="Convert currencies online using updated exchange rates. Free, fast and easy to use.">
+  <meta property="og:description" content="Convert USD, EUR, GBP, MAD and other major currencies quickly and easily with our free online currency converter.">
   <meta property="og:url" content="https://hakhaled30-blip.github.io/conversion-tools/currency-converter.html">
   <meta property="og:site_name" content="Conversion Tools">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Currency Converter",
+    "url": "https://hakhaled30-blip.github.io/conversion-tools/currency-converter.html",
+    "description": "Free online currency converter for converting major international currencies using updated exchange rates.",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Any",
+    "browserRequirements": "Requires JavaScript",
+    "isAccessibleForFree": true,
+    "inLanguage": ["en", "fr", "ar"]
+  }
+  </script>
 
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-K3YW32Z03B"></script>
@@ -28,7 +45,6 @@
     }
 
     gtag('js', new Date());
-
     gtag('config', 'G-K3YW32Z03B');
   </script>
 
@@ -39,74 +55,101 @@
       padding: 0;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: Arial, Helvetica, sans-serif;
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
       background: #f5f7fb;
       color: #1f2937;
       min-height: 100vh;
+      line-height: 1.6;
     }
 
     header {
       background: #ffffff;
       border-bottom: 1px solid #e5e7eb;
-      padding: 18px 20px;
+      padding: 16px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
 
     .header-content {
-      max-width: 900px;
+      max-width: 1000px;
       margin: auto;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 15px;
+      gap: 20px;
     }
 
     .logo {
       color: #2563eb;
       text-decoration: none;
-      font-size: 23px;
-      font-weight: 700;
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: -0.3px;
+    }
+
+    .logo:hover {
+      color: #1d4ed8;
     }
 
     .language-select {
       padding: 9px 12px;
       border: 1px solid #d1d5db;
-      border-radius: 8px;
+      border-radius: 9px;
       background: #ffffff;
       color: #374151;
       font-size: 14px;
       cursor: pointer;
+      outline: none;
+    }
+
+    .language-select:focus {
+      border-color: #2563eb;
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
     }
 
     main {
       max-width: 900px;
-      margin: 45px auto;
+      margin: 48px auto;
       padding: 0 20px;
     }
 
     .hero {
       text-align: center;
-      margin-bottom: 30px;
+      margin-bottom: 32px;
     }
 
     .hero h1 {
-      font-size: 38px;
+      font-size: 40px;
+      line-height: 1.2;
       color: #111827;
       margin-bottom: 12px;
+      letter-spacing: -0.8px;
     }
 
     .hero p {
+      max-width: 650px;
+      margin: auto;
       color: #6b7280;
       font-size: 17px;
-      line-height: 1.6;
+      line-height: 1.7;
     }
 
     .converter-card {
       background: #ffffff;
       border: 1px solid #e5e7eb;
-      border-radius: 18px;
-      padding: 30px;
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+      border-radius: 20px;
+      padding: 32px;
+      box-shadow:
+        0 12px 35px rgba(15, 23, 42, 0.07);
     }
 
     .field {
@@ -118,105 +161,154 @@
       font-weight: 700;
       margin-bottom: 8px;
       color: #374151;
+      font-size: 15px;
     }
 
     input,
     select {
       width: 100%;
-      padding: 13px 14px;
+      padding: 14px 15px;
       border: 1px solid #d1d5db;
-      border-radius: 9px;
+      border-radius: 10px;
       background: #ffffff;
       color: #111827;
       font-size: 16px;
       outline: none;
+      transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    input:hover,
+    select:hover {
+      border-color: #9ca3af;
     }
 
     input:focus,
     select:focus {
       border-color: #2563eb;
+      box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.12);
     }
 
     .unit-row {
       display: grid;
-      grid-template-columns: 1fr 55px 1fr;
-      gap: 12px;
+      grid-template-columns: 1fr 58px 1fr;
+      gap: 14px;
       align-items: end;
     }
 
     .swap-button {
-      width: 55px;
-      height: 46px;
+      width: 58px;
+      height: 48px;
       border: 1px solid #d1d5db;
-      border-radius: 9px;
+      border-radius: 10px;
       background: #f9fafb;
       color: #2563eb;
-      font-size: 22px;
+      font-size: 23px;
+      font-weight: 700;
       cursor: pointer;
-      margin-bottom: 0;
+      transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
     }
 
     .swap-button:hover {
       background: #eff6ff;
+      border-color: #93c5fd;
+      transform: translateY(-1px);
+    }
+
+    .swap-button:active {
+      transform: translateY(0);
     }
 
     .convert-button {
       width: 100%;
-      padding: 14px;
+      padding: 15px;
       border: none;
-      border-radius: 9px;
+      border-radius: 10px;
       background: #2563eb;
       color: #ffffff;
       font-size: 17px;
       font-weight: 700;
       cursor: pointer;
-      margin-top: 5px;
+      margin-top: 3px;
+      transition:
+        background 0.2s ease,
+        transform 0.2s ease;
     }
 
     .convert-button:hover {
       background: #1d4ed8;
+      transform: translateY(-1px);
+    }
+
+    .convert-button:active {
+      transform: translateY(0);
+    }
+
+    /*
+      ONE result box.
+      The rate information is now a small supporting line
+      inside the same result area instead of appearing
+      as a second separate result.
+    */
+
+    .result-box {
+      margin-top: 24px;
+      padding: 22px 18px;
+      background: linear-gradient(
+        135deg,
+        #eff6ff,
+        #f8fbff
+      );
+      border: 1px solid #bfdbfe;
+      border-radius: 14px;
+      text-align: center;
     }
 
     .result {
-      margin-top: 22px;
-      padding: 18px;
-      background: #f0f7ff;
-      border: 1px solid #dbeafe;
-      border-radius: 10px;
-      text-align: center;
-      font-size: 20px;
-      font-weight: 700;
       color: #1e40af;
-      min-height: 60px;
+      font-size: 25px;
+      font-weight: 800;
+      line-height: 1.4;
+      min-height: 36px;
       display: flex;
       align-items: center;
       justify-content: center;
     }
 
     .rate-info {
-      text-align: center;
-      color: #6b7280;
+      color: #64748b;
       font-size: 13px;
-      margin-top: 12px;
+      margin-top: 8px;
+      line-height: 1.5;
     }
 
     .about {
-      margin-top: 35px;
+      margin-top: 36px;
       background: #ffffff;
       border: 1px solid #e5e7eb;
-      border-radius: 16px;
-      padding: 28px;
+      border-radius: 18px;
+      padding: 30px;
     }
 
     .about h2 {
       color: #111827;
-      margin-bottom: 14px;
+      margin-bottom: 15px;
+      font-size: 24px;
     }
 
     .about p {
       color: #6b7280;
       line-height: 1.8;
-      margin-bottom: 10px;
+      margin-bottom: 11px;
+    }
+
+    .about p:last-child {
+      margin-bottom: 0;
     }
 
     footer {
@@ -224,11 +316,12 @@
       background: #111827;
       color: #d1d5db;
       text-align: center;
-      padding: 30px 20px;
+      padding: 32px 20px;
     }
 
     .footer-links {
-      margin-bottom: 15px;
+      margin-bottom: 16px;
+      line-height: 2;
     }
 
     .footer-links a {
@@ -244,6 +337,7 @@
 
     footer p {
       font-size: 14px;
+      color: #9ca3af;
     }
 
     html[dir="rtl"] body {
@@ -251,32 +345,95 @@
     }
 
     html[dir="rtl"] .hero,
-    html[dir="rtl"] .result {
+    html[dir="rtl"] .result-box {
       text-align: center;
     }
 
     @media (max-width: 650px) {
 
+      header {
+        padding: 14px 16px;
+      }
+
       .header-content {
-        flex-direction: column;
+        flex-direction: row;
+      }
+
+      .logo {
+        font-size: 19px;
+      }
+
+      main {
+        margin: 32px auto;
+        padding: 0 15px;
+      }
+
+      .hero {
+        margin-bottom: 24px;
       }
 
       .hero h1 {
         font-size: 30px;
       }
 
+      .hero p {
+        font-size: 15px;
+      }
+
       .converter-card {
-        padding: 22px;
+        padding: 22px 18px;
+        border-radius: 16px;
       }
 
       .unit-row {
         grid-template-columns: 1fr;
-        gap: 15px;
+        gap: 4px;
       }
 
       .swap-button {
         width: 100%;
         height: 44px;
+        margin: 2px 0 10px;
+      }
+
+      .result {
+        font-size: 21px;
+      }
+
+      .about {
+        padding: 24px 20px;
+      }
+
+      .about h2 {
+        font-size: 21px;
+      }
+
+      .footer-links a {
+        display: inline-block;
+      }
+    }
+
+    @media (max-width: 380px) {
+
+      .header-content {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .logo {
+        text-align: center;
+      }
+
+      .language-select {
+        width: 100%;
+      }
+
+      .hero h1 {
+        font-size: 27px;
+      }
+
+      .result {
+        font-size: 19px;
       }
     }
   </style>
@@ -291,7 +448,11 @@
       Conversion Tools
     </a>
 
-    <select id="languageSelect" class="language-select" aria-label="Language">
+    <select
+      id="languageSelect"
+      class="language-select"
+      aria-label="Language"
+    >
       <option value="en">🇬🇧 English</option>
       <option value="fr">🇫🇷 Français</option>
       <option value="ar">🇸🇦 العربية</option>
@@ -314,7 +475,10 @@
 
   </section>
 
-  <section class="converter-card">
+  <section
+    class="converter-card"
+    aria-label="Currency converter"
+  >
 
     <div class="field">
 
@@ -342,7 +506,10 @@
           From
         </label>
 
-        <select id="fromCurrency" aria-label="From currency"></select>
+        <select
+          id="fromCurrency"
+          aria-label="From currency"
+        ></select>
 
       </div>
 
@@ -362,7 +529,10 @@
           To
         </label>
 
-        <select id="toCurrency" aria-label="To currency"></select>
+        <select
+          id="toCurrency"
+          aria-label="To currency"
+        ></select>
 
       </div>
 
@@ -376,12 +546,23 @@
       Convert
     </button>
 
-    <div class="result" id="result" aria-live="polite">
-      Loading exchange rates...
-    </div>
+    <div class="result-box">
 
-    <div class="rate-info" id="rateInfo">
-      Exchange rates are updated automatically.
+      <div
+        class="result"
+        id="result"
+        aria-live="polite"
+      >
+        Loading exchange rates...
+      </div>
+
+      <div
+        class="rate-info"
+        id="rateInfo"
+      >
+        Exchange rates are updated automatically.
+      </div>
+
     </div>
 
   </section>
@@ -760,8 +941,7 @@ function convertCurrency() {
     amount + " " +
     from +
     " = " +
-    formattedResult +
-    " " +
+    formattedResult + " " +
     to;
 
   document.getElementById("rateInfo").textContent =
@@ -867,6 +1047,9 @@ function setLanguage(language) {
 
     document.getElementById("result").textContent =
       t.loading;
+
+    document.getElementById("rateInfo").textContent =
+      t.rateInfo;
 
   }
 
