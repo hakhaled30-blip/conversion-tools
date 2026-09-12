@@ -4,11 +4,35 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Volume Converter - Free Online Tool</title>
+  <title>Volume Converter - Liters, Gallons, Cups & More</title>
 
-  <meta name="description" content="Free online volume converter. Convert liters, milliliters, cubic meters, gallons, quarts, pints, cups and more.">
+  <meta name="description" content="Free online volume converter. Convert liters, milliliters, cubic meters, gallons, quarts, pints, cups and other volume units quickly and accurately.">
 
   <meta name="robots" content="index, follow">
+
+  <link rel="canonical" href="https://hakhaled30-blip.github.io/conversion-tools/volume-converter.html">
+
+  <meta name="theme-color" content="#2563eb">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Volume Converter - Free Online Tool">
+  <meta property="og:description" content="Convert liters, milliliters, cubic meters, gallons, quarts, pints, cups and more with our free online volume converter.">
+  <meta property="og:url" content="https://hakhaled30-blip.github.io/conversion-tools/volume-converter.html">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Volume Converter",
+    "url": "https://hakhaled30-blip.github.io/conversion-tools/volume-converter.html",
+    "description": "Free online volume converter for converting liters, milliliters, cubic meters, gallons, quarts, pints, cups and other volume units.",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Any",
+    "browserRequirements": "Requires JavaScript",
+    "isAccessibleForFree": true,
+    "inLanguage": "en"
+  }
+  </script>
 
   <style>
     * {
@@ -22,6 +46,7 @@
       background: #f5f7fb;
       color: #1f2937;
       min-height: 100vh;
+      line-height: 1.6;
     }
 
     header {
@@ -36,6 +61,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 20px;
     }
 
     .logo {
@@ -68,6 +94,7 @@
 
     .intro h1 {
       font-size: 40px;
+      line-height: 1.2;
       color: #111827;
       margin-bottom: 12px;
     }
@@ -194,12 +221,28 @@
     .info h2 {
       margin-bottom: 12px;
       color: #111827;
+      line-height: 1.3;
+    }
+
+    .info h3 {
+      margin-top: 22px;
+      margin-bottom: 8px;
+      color: #111827;
+      line-height: 1.3;
     }
 
     .info p {
-      color: #6b7280;
+      color: #4b5563;
       margin-bottom: 10px;
-      line-height: 1.7;
+    }
+
+    .info ul {
+      margin: 10px 0 0 22px;
+      color: #4b5563;
+    }
+
+    .info li {
+      margin-bottom: 6px;
     }
 
     footer {
@@ -214,6 +257,10 @@
       color: #ffffff;
       text-decoration: none;
       margin: 0 8px;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
     }
 
     footer p {
@@ -237,6 +284,10 @@
       .result-text {
         font-size: 22px;
       }
+
+      .header-content {
+        align-items: flex-start;
+      }
     }
   </style>
 </head>
@@ -250,7 +301,7 @@
         Conversion Tools
       </a>
 
-      <a href="index.html" class="home-link">
+      <a href="index.html" class="home-link" aria-label="Return to Conversion Tools home page">
         ← Home
       </a>
 
@@ -260,22 +311,17 @@
   <main>
 
     <section class="intro">
-
       <h1>Volume Converter</h1>
 
       <p>
-        Convert volume units quickly and accurately.
+        Convert volume units quickly and accurately online.
       </p>
-
     </section>
 
-    <section class="converter">
+    <section class="converter" aria-label="Volume converter">
 
       <div class="field">
-
-        <label for="amount">
-          Volume
-        </label>
+        <label for="amount">Volume</label>
 
         <input
           type="number"
@@ -283,126 +329,60 @@
           value="1"
           min="0"
           step="any"
+          inputmode="decimal"
           placeholder="Enter volume"
+          aria-label="Enter volume amount"
         >
-
       </div>
 
       <div class="field">
+        <label for="fromUnit">From</label>
 
-        <label for="fromUnit">
-          From
-        </label>
+        <select id="fromUnit" aria-label="Select original volume unit">
 
-        <select id="fromUnit">
-
-          <option value="liter">
-            Liter (L)
-          </option>
-
-          <option value="milliliter">
-            Milliliter (mL)
-          </option>
-
-          <option value="cubic-meter">
-            Cubic Meter (m³)
-          </option>
-
-          <option value="cubic-centimeter">
-            Cubic Centimeter (cm³)
-          </option>
-
-          <option value="cubic-inch">
-            Cubic Inch (in³)
-          </option>
-
-          <option value="cubic-foot">
-            Cubic Foot (ft³)
-          </option>
-
-          <option value="us-gallon">
-            US Gallon (gal)
-          </option>
-
-          <option value="us-quart">
-            US Quart (qt)
-          </option>
-
-          <option value="us-pint">
-            US Pint (pt)
-          </option>
-
-          <option value="us-cup">
-            US Cup (cup)
-          </option>
+          <option value="liter">Liter (L)</option>
+          <option value="milliliter">Milliliter (mL)</option>
+          <option value="cubic-meter">Cubic Meter (m³)</option>
+          <option value="cubic-centimeter">Cubic Centimeter (cm³)</option>
+          <option value="cubic-inch">Cubic Inch (in³)</option>
+          <option value="cubic-foot">Cubic Foot (ft³)</option>
+          <option value="us-gallon">US Gallon (gal)</option>
+          <option value="us-quart">US Quart (qt)</option>
+          <option value="us-pint">US Pint (pt)</option>
+          <option value="us-cup">US Cup (cup)</option>
 
         </select>
-
       </div>
 
       <div class="swap-container">
-
         <button
           type="button"
           class="swap-button"
           onclick="swapUnits()"
           title="Swap units"
+          aria-label="Swap volume units"
         >
           ⇅
         </button>
-
       </div>
 
       <div class="field">
+        <label for="toUnit">To</label>
 
-        <label for="toUnit">
-          To
-        </label>
+        <select id="toUnit" aria-label="Select target volume unit">
 
-        <select id="toUnit">
-
-          <option value="milliliter">
-            Milliliter (mL)
-          </option>
-
-          <option value="liter">
-            Liter (L)
-          </option>
-
-          <option value="cubic-meter">
-            Cubic Meter (m³)
-          </option>
-
-          <option value="cubic-centimeter">
-            Cubic Centimeter (cm³)
-          </option>
-
-          <option value="cubic-inch">
-            Cubic Inch (in³)
-          </option>
-
-          <option value="cubic-foot">
-            Cubic Foot (ft³)
-          </option>
-
-          <option value="us-gallon">
-            US Gallon (gal)
-          </option>
-
-          <option value="us-quart">
-            US Quart (qt)
-          </option>
-
-          <option value="us-pint">
-            US Pint (pt)
-          </option>
-
-          <option value="us-cup">
-            US Cup (cup)
-          </option>
+          <option value="milliliter">Milliliter (mL)</option>
+          <option value="liter">Liter (L)</option>
+          <option value="cubic-meter">Cubic Meter (m³)</option>
+          <option value="cubic-centimeter">Cubic Centimeter (cm³)</option>
+          <option value="cubic-inch">Cubic Inch (in³)</option>
+          <option value="cubic-foot">Cubic Foot (ft³)</option>
+          <option value="us-gallon">US Gallon (gal)</option>
+          <option value="us-quart">US Quart (qt)</option>
+          <option value="us-pint">US Pint (pt)</option>
+          <option value="us-cup">US Cup (cup)</option>
 
         </select>
-
       </div>
 
       <button
@@ -413,19 +393,13 @@
         Convert
       </button>
 
-      <div class="error" id="error"></div>
+      <div class="error" id="error" role="alert"></div>
 
-      <div class="result" id="result">
+      <div class="result" id="result" aria-live="polite">
 
-        <div
-          class="result-text"
-          id="resultText"
-        ></div>
+        <div class="result-text" id="resultText"></div>
 
-        <div
-          class="formula"
-          id="formulaText"
-        ></div>
+        <div class="formula" id="formulaText"></div>
 
       </div>
 
@@ -433,24 +407,47 @@
 
     <section class="info">
 
-      <h2>
-        About Volume Conversion
-      </h2>
+      <h2>About Volume Conversion</h2>
 
       <p>
-        Volume conversion allows you to convert measurements between
-        different units of volume.
+        Volume conversion helps you convert measurements between different
+        units of volume quickly and accurately.
       </p>
 
       <p>
-        This tool supports liters, milliliters, cubic meters,
-        cubic centimeters, cubic inches, cubic feet, US gallons,
-        quarts, pints and cups.
+        This free volume converter supports liters, milliliters, cubic meters,
+        cubic centimeters, cubic inches, cubic feet, US gallons, quarts,
+        pints and cups.
       </p>
 
+      <h3>How to use the volume converter</h3>
+
       <p>
-        Enter a value, choose the original unit and select the unit
-        you want to convert to.
+        Enter a volume, choose the original unit, select the unit you want
+        to convert to, and click the Convert button.
+      </p>
+
+      <h3>Supported volume units</h3>
+
+      <ul>
+        <li>Liters (L)</li>
+        <li>Milliliters (mL)</li>
+        <li>Cubic meters (m³)</li>
+        <li>Cubic centimeters (cm³)</li>
+        <li>Cubic inches (in³)</li>
+        <li>Cubic feet (ft³)</li>
+        <li>US gallons (gal)</li>
+        <li>US quarts (qt)</li>
+        <li>US pints (pt)</li>
+        <li>US cups (cup)</li>
+      </ul>
+
+      <h3>Common volume conversions</h3>
+
+      <p>
+        1 liter equals 1,000 milliliters. One US gallon equals approximately
+        3.785 liters. Conversion results are calculated automatically using
+        standard unit conversion factors.
       </p>
 
     </section>
@@ -459,33 +456,13 @@
 
   <footer>
 
-    <a href="index.html">
-      Home
-    </a>
-
-    <a href="currency-converter.html">
-      Currency Converter
-    </a>
-
-    <a href="length-converter.html">
-      Length Converter
-    </a>
-
-    <a href="weight-converter.html">
-      Weight Converter
-    </a>
-
-    <a href="temperature-converter.html">
-      Temperature Converter
-    </a>
-
-    <a href="area-converter.html">
-      Area Converter
-    </a>
-
-    <a href="volume-converter.html">
-      Volume Converter
-    </a>
+    <a href="index.html">Home</a>
+    <a href="currency-converter.html">Currency Converter</a>
+    <a href="length-converter.html">Length Converter</a>
+    <a href="weight-converter.html">Weight Converter</a>
+    <a href="temperature-converter.html">Temperature Converter</a>
+    <a href="area-converter.html">Area Converter</a>
+    <a href="volume-converter.html">Volume Converter</a>
 
     <p>
       © 2026 Conversion Tools. All rights reserved.
@@ -494,67 +471,40 @@
   </footer>
 
   <script>
-
     /*
       Conversion factors relative to one liter.
     */
 
     const volumeUnits = {
-
       liter: 1,
-
       milliliter: 0.001,
-
       "cubic-meter": 1000,
-
       "cubic-centimeter": 0.001,
-
       "cubic-inch": 0.016387064,
-
       "cubic-foot": 28.316846592,
-
       "us-gallon": 3.785411784,
-
       "us-quart": 0.946352946,
-
       "us-pint": 0.473176473,
-
       "us-cup": 0.2365882365
-
     };
-
 
     const unitNames = {
-
       liter: "L",
-
       milliliter: "mL",
-
       "cubic-meter": "m³",
-
       "cubic-centimeter": "cm³",
-
       "cubic-inch": "in³",
-
       "cubic-foot": "ft³",
-
       "us-gallon": "gal",
-
       "us-quart": "qt",
-
       "us-pint": "pt",
-
       "us-cup": "cup"
-
     };
-
 
     function convertVolume() {
 
       const amount =
-        Number(
-          document.getElementById("amount").value
-        );
+        Number(document.getElementById("amount").value);
 
       const from =
         document.getElementById("fromUnit").value;
@@ -574,23 +524,18 @@
       const error =
         document.getElementById("error");
 
-
       error.style.display = "none";
-
       result.style.display = "none";
-
 
       if (!Number.isFinite(amount) || amount < 0) {
 
         error.textContent =
           "Please enter a valid volume value.";
 
-        error.style.display =
-          "block";
+        error.style.display = "block";
 
         return;
       }
-
 
       /*
         Convert the original value to liters.
@@ -599,14 +544,12 @@
       const liters =
         amount * volumeUnits[from];
 
-
       /*
         Convert liters to the target unit.
       */
 
       const converted =
         liters / volumeUnits[to];
-
 
       resultText.textContent =
         formatNumber(amount) +
@@ -617,11 +560,9 @@
         " " +
         unitNames[to];
 
-
       const oneUnit =
         volumeUnits[from] /
         volumeUnits[to];
-
 
       formulaText.textContent =
         "1 " +
@@ -631,11 +572,8 @@
         " " +
         unitNames[to];
 
-
-      result.style.display =
-        "block";
+      result.style.display = "block";
     }
-
 
     function swapUnits() {
 
@@ -645,29 +583,19 @@
       const to =
         document.getElementById("toUnit");
 
-
       const temporary =
         from.value;
-
 
       from.value =
         to.value;
 
-
       to.value =
         temporary;
 
+      document.getElementById("result").style.display = "none";
 
-      document.getElementById(
-        "result"
-      ).style.display = "none";
-
-
-      document.getElementById(
-        "error"
-      ).style.display = "none";
+      document.getElementById("error").style.display = "none";
     }
-
 
     function formatNumber(number) {
 
@@ -677,9 +605,16 @@
           maximumFractionDigits: 12
         }
       );
-
     }
 
+    /*
+      Show an initial conversion result.
+      This also makes the tool useful immediately after loading.
+    */
+
+    window.addEventListener("DOMContentLoaded", function () {
+      convertVolume();
+    });
   </script>
 
 </body>
